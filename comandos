@@ -1,0 +1,2 @@
+find . -type f -name '.goutputstream-*' -exec rm {} +
+find . -type f -name '*.swp' -exec rm {} +

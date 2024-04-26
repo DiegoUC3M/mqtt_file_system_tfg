@@ -105,9 +105,12 @@ def on_message(client, userdata, msg):
         try:
             datos_leidos = os.read(read_data["fh"], read_data["size"])
 
+            #Mandamos la informaicon codificada en base64 para aquellos ficheros que no tienen codifcacion ascii (los ficheros .swp por ejemplo)
+            datos_b64 = base64.b64encode(datos_leidos).decode()
+            json_read = json.dumps({"datos_b64": datos_b64})
+
             # Publicamos los datos para que los reciba el cliente que ha solicitado la lectura:
-            client.publish(READ_TOPIC, datos_leidos, qos=2)
-            #os.close(fd) #TODO: implementar el close y quitar esta linea
+            client.publish(READ_TOPIC, json_read, qos=2)
 
         #TODO: manejar las excepciones de la v1
         except FileNotFoundError:
@@ -180,7 +183,7 @@ def on_message(client, userdata, msg):
 
 
 def main():
-    subprocess.run(['gnome-terminal', '--', 'bash', '-c', 'mosquitto', '-v'])
+    subprocess.run(['gnome-terminal', '--', 'bash', '-c', 'mosquitto', '-v'], capture_output=True, text=True)
     #subprocess.Popen(['xfce4-terminal', '-e', 'bash -c "mosquitto -v"'])
     client = mqtt.Client(client_id="file_manager")
     client.on_connect = on_connect

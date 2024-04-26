@@ -74,7 +74,7 @@ def on_publish(client, userdata, mid):
 def on_message(client, userdata, msg):
     topic = msg.topic.split('/')
 
-    userdata[topic[-1]] = msg.payload
+    userdata[topic[-1]] = msg.payload.decode()
 
 def sync(op, pending_requests): #TODO:  cambiar el nombre del pending_requests
 
@@ -124,8 +124,7 @@ class MqttFS(Operations):
 
             response = sync("getattr", self.pending_requests)
 
-            decoded_response = response.decode()
-            if decoded_response != "1":
+            if response != "1":
                 list_stat = json.loads(response)
                 return list_stat
             else:
@@ -155,8 +154,11 @@ class MqttFS(Operations):
 
         response = sync("read", self.pending_requests)
 
+        read_dict = json.loads(response)
+        datos_leidos = base64.b64decode(read_dict["datos_b64"])
+
         #necesario devolver literal de bytes:
-        return response
+        return datos_leidos
 
 
 
@@ -166,9 +168,7 @@ class MqttFS(Operations):
 
         #write_data["text"] = data.decode()
         write_data["file_handle"] = fh
-
-
-        write_data["text"] = data
+        write_data["text"] = base64.b64encode(data).decode()
 
 
         datos_json = json.dumps(write_data)
@@ -221,8 +221,7 @@ class MqttFS(Operations):
 
         response = sync("rename", self.pending_requests)
 
-        decoded_response = response.decode()
-        if decoded_response != "1":
+        if response != "1":
             return None
         else:
             #Si ha fallado la operacion de rename mandaremos error de que el sistema es read-only file system por defecto
@@ -238,8 +237,7 @@ class MqttFS(Operations):
 
         response = sync("unlink", self.pending_requests)
 
-        decoded_response = response.decode()
-        if decoded_response != "1":
+        if response != "1":
             return None
         else:
             #Si ha fallado la operacion de unlink mandaremos error de que el sistema es read-only file system por defecto

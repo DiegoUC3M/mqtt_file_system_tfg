@@ -9,8 +9,10 @@ REQUEST_WRITE_TOPIC = "/topic/request/write"
 WRITE_TOPIC = "/topic/write"
 READ_TOPIC = "/topic/read"
 REQUEST_READ_TOPIC = "/topic/request/read"
+
 READDIR_TOPIC = "/topic/readDir"
 REQUEST_READ_DIR_TOPIC = "/topic/request/readDir"
+
 GETATTR_TOPIC = "/topic/getattr"
 REQUEST_GETATTR_TOPIC = "/topic/request/getattr"
 
@@ -35,6 +37,15 @@ REQUEST_FLUSH_FSYNC_TOPIC = "/topic/request/flush_fsync"
 RELEASE_TOPIC = "/topic/release"
 REQUEST_RELEASE_TOPIC = "/topic/request/release"
 
+CHOWN_TOPIC = "/topic/chown"
+REQUEST_CHOWN_TOPIC = "/topic/request/chown"
+
+CHMOD_TOPIC = "/topic/chmod"
+REQUEST_CHMOD_TOPIC = "/topic/request/chmod"
+
+MKDIR_TOPIC = "/topic/mkdir"
+REQUEST_MKDIR_TOPIC = "/topic/request/mkdir"
+
 SERVER_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_servidor"
 
 
@@ -52,10 +63,15 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(REQUEST_UNLINK_TOPIC)
         client.subscribe(REQUEST_FLUSH_FSYNC_TOPIC)
         client.subscribe(REQUEST_RELEASE_TOPIC)
+        client.subscribe(REQUEST_CHOWN_TOPIC)
+        client.subscribe(REQUEST_CHMOD_TOPIC)
+        #client.subscribe(REQUEST_MKDIR_TOPIC)
     else:
         print("Error al intentar conectase al broker")
 
 #TODO: limpiar todos los msg.payload.decode() que realmente no son necesarios
+#TODO: pensar una forma mas generica de implementar algunas de las funciones, o pensar si merece
+                                            #la pena, ya que muchas de ellas se parecen bastante
 
 def on_message(client, userdata, msg):
     topic = msg.topic.split('/')
@@ -178,13 +194,45 @@ def on_message(client, userdata, msg):
         fh = msg.payload.decode()
         os.close(int(fh))
 
+    if topic[-1] == "chown":
+        json_chown = msg.payload.decode()
+        chown_data = json.loads(json_chown)
 
+
+        try:
+            os.chown(SERVER_PATH + chown_data["path"], chown_data["uid"], chown_data["gid"])
+            client.publish(CHOWN_TOPIC, "0", qos=2)
+        except OSError:
+            client.publish(CHOWN_TOPIC, "1", qos=2)
+
+
+    if topic[-1] == "chmod":
+        json_chmod = msg.payload.decode()
+        chmod_data = json.loads(json_chmod)
+
+        try:
+            os.chmod(SERVER_PATH + chmod_data["path"], chmod_data["mode"])
+            client.publish(CHMOD_TOPIC, "0", qos=2)
+        except OSError:
+            client.publish(CHMOD_TOPIC, "1", qos=2)
+
+    if topic[-1] == "mkdir":
+        json_mkdir = msg.payload.decode()
+        mkdir_data = json.loads(json_mkdir)
+
+        try:
+            os.mkdir(SERVER_PATH + mkdir_data["path"], mkdir_data["mode"])
+            client.publish(MKDIR_TOPIC, "0", qos=2)
+
+        #por ejemplo, si tratas de crear un directorio con el nombre de un directorio ya existente
+        except OSError:
+            client.publish(MKDIR_TOPIC, "1", qos=2)
 
 
 
 def main():
-    subprocess.run(['gnome-terminal', '--', 'bash', '-c', 'mosquitto', '-v'], capture_output=True, text=True)
-    #subprocess.Popen(['xfce4-terminal', '-e', 'bash -c "mosquitto -v"'])
+    #subprocess.run(['gnome-terminal', '--', 'bash', '-c', 'mosquitto', '-v'], capture_output=True, text=True)
+    subprocess.Popen(['xfce4-terminal', '-e', 'bash -c "mosquitto -v"'])
     client = mqtt.Client(client_id="file_manager")
     client.on_connect = on_connect
     client.on_message = on_message

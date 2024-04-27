@@ -43,12 +43,21 @@ REQUEST_FLUSH_FSYNC_TOPIC = "/topic/request/flush_fsync"
 RELEASE_TOPIC = "/topic/release"
 REQUEST_RELEASE_TOPIC = "/topic/request/release"
 
+CHOWN_TOPIC = "/topic/chown"
+REQUEST_CHOWN_TOPIC = "/topic/request/chown"
+
+CHMOD_TOPIC = "/topic/chmod"
+REQUEST_CHMOD_TOPIC = "/topic/request/chmod"
+
+MKDIR_TOPIC = "/topic/mkdir"
+REQUEST_MKDIR_TOPIC = "/topic/request/mkdir"
+
 CLIENT_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_cliente"
 
 
 
 def on_connect(client, userdata, flags, rc):
-    global ack
+
     if rc == 0:
         print("Se ha conectado al broker con exito\n")
         client.subscribe(READ_TOPIC)  # Para recibir los datos de vuelta
@@ -62,6 +71,9 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(UNLINK_TOPIC)
         client.subscribe(FLUSH_FSYNC_TOPIC)
         client.subscribe(RELEASE_TOPIC)
+        client.subscribe(CHOWN_TOPIC)
+        client.subscribe(CHMOD_TOPIC)
+        #client.subscribe(MKDIR_TOPIC)
     else:
         print("Error al intentar conectase al broker")
 
@@ -109,7 +121,7 @@ class MqttFS(Operations):
 
     def getattr(self, path, fh=None):
 
-
+        #TODO: este bloque ahora se podria quitar porque estoy manejando las excepciones abajo
         if re.compile(r"^\/\.Trash").match(path) or path in ["/.xdg-volume-info", "/autorun.inf", "/.hidden"]:
             raise FuseOSError(errno.ENOENT)
 
@@ -130,6 +142,8 @@ class MqttFS(Operations):
             else:
                 raise FuseOSError(errno.ENOENT)
 
+    #TODO: implementar manejo de excepciones, para el caso en el que no tengas ficheros de apertura para un fichero
+    #TODO: hacer lo mismo para write/read
     def open(self, path, flags):
         open_data = {}
         open_data["path"] = path
@@ -212,8 +226,8 @@ class MqttFS(Operations):
         return file_handle
 
     def rename(self, old, new):
-        rename_data = {"old": old, "new": new}
 
+        rename_data = {"old": old, "new": new}
         json_rename = json.dumps(rename_data)
 
         self.client.publish(REQUEST_RENAME_TOPIC, json_rename,
@@ -269,9 +283,70 @@ class MqttFS(Operations):
 
         return 0
 
+    #PERMISOS:
+    '''
+    def chmod(self, path, mode):
+        chmod_data = {"path": path, "mode": mode}
+        json_chmod = json.dumps(chmod_data)
+
+        self.client.publish(REQUEST_CHMOD_TOPIC, json_chmod,
+                            qos=2)  # TODO ver que qos implemento
+
+        response = sync("chmod", self.pending_requests)
+
+        if response != "1":
+            return None
+        else:
+            # TODO: implementar una forma mas generica del rollo:        except OSError as e:    raise FuseOSError(e.errno)
+            raise FuseOSError(errno.EROFS)
 
 
+    #TODO: comprobar si no funciona al estar el directorio montado en mi espacio de usuario, y por ese motivo otro usuario
+    #TODO: no puede acceder, al no tener permisos de r-x para mi directorio home
+    def chown(self, path, uid, gid):
+        chown_data = {"path": path, "uid": uid, "gid": gid}
+        json_chown = json.dumps(chown_data)
 
+        self.client.publish(REQUEST_CHOWN_TOPIC, json_chown,
+                            qos=2)  # TODO ver que qos implemento
+
+        response = sync("chown", self.pending_requests)
+
+        if response != "1":
+            return None
+        else:
+            # TODO: implementar una forma mas generica del rollo:        except OSError as e:    raise FuseOSError(e.errno)
+            raise FuseOSError(errno.EROFS)
+
+    #OPERACIONES PARA DIRECTORIO:
+    
+    #TODO: comprobar si se puede sustituir por ACCESS
+    def opendir(self, path):
+
+        return 0
+
+    def releasedir(self, path, fh):
+        return 0
+
+    def mkdir(self, path, mode):
+        mkdir_data = {"path": path, "mode": mode}
+        json_mkdir = json.dumps(mkdir_data)
+
+        self.client.publish(REQUEST_MKDIR_TOPIC, json_mkdir,
+                            qos=2)  # TODO ver que qos implemento
+
+        response = sync("mkdir", self.pending_requests)
+
+        if response != "1":
+            return None
+        else:
+            # TODO: implementar una forma mas generica del rollo:        except OSError as e:    raise FuseOSError(e.errno)
+            raise FuseOSError(errno.EROFS)
+
+    def rmdir(self, path):
+        raise FuseOSError(errno.EROFS)
+
+    '''
 if __name__ == "__main__":
 
     subprocess.run(['fusermount', '-uz', CLIENT_PATH], capture_output=False, text=True) #A veces no se desmonta el volumen aunque detengas el script

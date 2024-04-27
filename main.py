@@ -52,6 +52,9 @@ REQUEST_CHMOD_TOPIC = "/topic/request/chmod"
 MKDIR_TOPIC = "/topic/mkdir"
 REQUEST_MKDIR_TOPIC = "/topic/request/mkdir"
 
+RMDIR_TOPIC = "/topic/rmdir"
+REQUEST_RMDIR_TOPIC = "/topic/request/rmdir"
+
 CLIENT_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_cliente"
 
 
@@ -73,7 +76,8 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(RELEASE_TOPIC)
         client.subscribe(CHOWN_TOPIC)
         client.subscribe(CHMOD_TOPIC)
-        #client.subscribe(MKDIR_TOPIC)
+        client.subscribe(MKDIR_TOPIC)
+        client.subscribe(RMDIR_TOPIC)
     else:
         print("Error al intentar conectase al broker")
 
@@ -109,7 +113,7 @@ class MqttFS(Operations):
     #TODO: ESTUDIAR EL POSIBLE MANEJO DE ERRORES DE TODAS LAS OPERACIONES
 
     def readdir(self, path, fh):
-        self.client.publish(REQUEST_READ_DIR_TOPIC, CLIENT_PATH + path, qos=2)  # TODO: decidir que qos implemento ?
+        self.client.publish(REQUEST_READ_DIR_TOPIC, path, qos=2)  # TODO: decidir que qos implemento ?
                                                                                 # TODO: que mensaje mando? ese no se utiliza para nada
 
         response = sync("readDir", self.pending_requests)
@@ -284,7 +288,7 @@ class MqttFS(Operations):
         return 0
 
     #PERMISOS:
-    '''
+
     def chmod(self, path, mode):
         chmod_data = {"path": path, "mode": mode}
         json_chmod = json.dumps(chmod_data)
@@ -320,14 +324,15 @@ class MqttFS(Operations):
 
     #OPERACIONES PARA DIRECTORIO:
     
-    #TODO: comprobar si se puede sustituir por ACCESS
+    #TODO: comprobar si se puede sustituir por ACCESS, o si es necesario realmente
+    '''
     def opendir(self, path):
 
         return 0
-
+    
     def releasedir(self, path, fh):
         return 0
-
+    '''
     def mkdir(self, path, mode):
         mkdir_data = {"path": path, "mode": mode}
         json_mkdir = json.dumps(mkdir_data)
@@ -344,9 +349,19 @@ class MqttFS(Operations):
             raise FuseOSError(errno.EROFS)
 
     def rmdir(self, path):
-        raise FuseOSError(errno.EROFS)
 
-    '''
+        self.client.publish(REQUEST_RMDIR_TOPIC, path,
+                            qos=2)  # TODO ver que qos implemento
+
+        response = sync("rmdir", self.pending_requests)
+
+        if response != "1":
+            return None
+        else:
+            # TODO: implementar una forma mas generica del rollo:        except OSError as e:    raise FuseOSError(e.errno)
+            raise FuseOSError(errno.EROFS)
+
+
 if __name__ == "__main__":
 
     subprocess.run(['fusermount', '-uz', CLIENT_PATH], capture_output=False, text=True) #A veces no se desmonta el volumen aunque detengas el script

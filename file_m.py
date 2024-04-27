@@ -46,6 +46,9 @@ REQUEST_CHMOD_TOPIC = "/topic/request/chmod"
 MKDIR_TOPIC = "/topic/mkdir"
 REQUEST_MKDIR_TOPIC = "/topic/request/mkdir"
 
+RMDIR_TOPIC = "/topic/rmdir"
+REQUEST_RMDIR_TOPIC = "/topic/request/rmdir"
+
 SERVER_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_servidor"
 
 
@@ -65,7 +68,8 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(REQUEST_RELEASE_TOPIC)
         client.subscribe(REQUEST_CHOWN_TOPIC)
         client.subscribe(REQUEST_CHMOD_TOPIC)
-        #client.subscribe(REQUEST_MKDIR_TOPIC)
+        client.subscribe(REQUEST_MKDIR_TOPIC)
+        client.subscribe(REQUEST_RMDIR_TOPIC)
     else:
         print("Error al intentar conectase al broker")
 
@@ -135,8 +139,11 @@ def on_message(client, userdata, msg):
             print(error_message)
 
     if topic[-1] == "readDir":
+
+        file_path = msg.payload.decode()
         parentPath = [".", ".."]
-        files = os.listdir(SERVER_PATH)
+
+        files = os.listdir(SERVER_PATH + file_path)
         parentPath.extend(files)
 
         files_json = json.dumps(parentPath)
@@ -227,6 +234,17 @@ def on_message(client, userdata, msg):
         #por ejemplo, si tratas de crear un directorio con el nombre de un directorio ya existente
         except OSError:
             client.publish(MKDIR_TOPIC, "1", qos=2)
+
+    if topic[-1] == "rmdir":
+        path = msg.payload.decode()
+
+        try:
+            os.rmdir(SERVER_PATH + path)
+            client.publish(RMDIR_TOPIC, "0", qos=2)
+
+        # por ejemplo, si tratas de eliminar un directorio con el nombre de un directorio no existente
+        except OSError:
+            client.publish(RMDIR_TOPIC, "1", qos=2)
 
 
 

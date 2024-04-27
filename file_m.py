@@ -76,7 +76,7 @@ def on_connect(client, userdata, flags, rc):
 #TODO: limpiar todos los msg.payload.decode() que realmente no son necesarios
 #TODO: pensar una forma mas generica de implementar algunas de las funciones, o pensar si merece
                                             #la pena, ya que muchas de ellas se parecen bastante
-
+#TODO: sustituir todas las concatenaciones que hecho del tipo server_path+path por un --> os.path.join
 def on_message(client, userdata, msg):
     topic = msg.topic.split('/')
 
@@ -243,6 +243,7 @@ def on_message(client, userdata, msg):
             client.publish(RMDIR_TOPIC, "0", qos=2)
 
         # por ejemplo, si tratas de eliminar un directorio con el nombre de un directorio no existente
+        # o si tratas de eliminar un directorio que aun contiene ficheros dentro
         except OSError:
             client.publish(RMDIR_TOPIC, "1", qos=2)
 

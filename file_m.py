@@ -1,4 +1,7 @@
+import errno
 import os
+import sys
+
 import paho.mqtt.client as mqtt
 import json
 import subprocess #para el comando de mosquitto
@@ -99,12 +102,12 @@ def on_message(client, userdata, msg):
 
         num_bytes_written = os.write(fh, write_data)
         client.publish(WRITE_TOPIC, num_bytes_written, qos=2)
-        #os.close(fd) #TODO: implementar el close y quitar esta linea
 
-    if topic [-1] == "truncate" :
+    if topic[-1] == "truncate":
         json_read = msg.payload.decode()
         truncate_data = json.loads(json_read)
 
+        #TODO: cambiar implementacion, el truncate realmente no devuelve nada
         truncate_op = os.ftruncate(truncate_data["fh"], truncate_data["length"])
         client.publish(TRUNCATE_TOPIC, truncate_op, qos=2)
 
@@ -133,10 +136,8 @@ def on_message(client, userdata, msg):
             client.publish(READ_TOPIC, json_read, qos=2)
 
         #TODO: manejar las excepciones de la v1
-        except FileNotFoundError:
-            error_message = f"No existe ningun fichero con nombre: read_data[fh]. Por favor, introduzca un file_name correcto"
-            client.publish(READ_TOPIC, error_message, qos=1)
-            print(error_message)
+        except OSError as e:
+            client.publish(READ_TOPIC, e.errno, qos=1)
 
     if topic[-1] == "readDir":
 
@@ -165,9 +166,10 @@ def on_message(client, userdata, msg):
             files_attr_json = json.dumps(file_attr_dict)
             client.publish(GETATTR_TOPIC, files_attr_json, qos=2)  # TODO: decidir que qos implemento ?
 
-        except FileNotFoundError:
+        except OSError as e:
             #no se manda el error porque    -->    TypeError: Object of type type is not JSON serializable
-            client.publish(GETATTR_TOPIC,"1", qos=2)
+            err_code = json.dumps(e.errno)
+            client.publish(GETATTR_TOPIC, err_code, qos=2)
 
 
     if topic[-1] == "rename":
@@ -179,8 +181,8 @@ def on_message(client, userdata, msg):
             #Hay que publicar igualmente aunque en caso de exito no devuelva nada, para que en el sync no se quede en el bucle indefinidamente y poder cubrir el caso de error (el de poder
                                                                                                                                                               #mandar el 1 si falla)
             client.publish(RENAME_TOPIC, "0", qos=2)
-        except OSError:
-            client.publish(RENAME_TOPIC, "1", qos=2)
+        except OSError as e:
+            client.publish(RENAME_TOPIC, e.errno, qos=2)
 
 
     if topic[-1] == "unlink":
@@ -188,8 +190,8 @@ def on_message(client, userdata, msg):
         try:
             os.unlink(SERVER_PATH + path)
             client.publish(UNLINK_TOPIC, "0", qos=2)
-        except OSError:
-            client.publish(UNLINK_TOPIC, "1", qos=2)
+        except OSError as e:
+            client.publish(UNLINK_TOPIC, e.errno, qos=2)
 
     if topic[-1] == "flush_fsync":
 
@@ -209,8 +211,8 @@ def on_message(client, userdata, msg):
         try:
             os.chown(SERVER_PATH + chown_data["path"], chown_data["uid"], chown_data["gid"])
             client.publish(CHOWN_TOPIC, "0", qos=2)
-        except OSError:
-            client.publish(CHOWN_TOPIC, "1", qos=2)
+        except OSError as e:
+            client.publish(CHOWN_TOPIC, e.errno, qos=2)
 
 
     if topic[-1] == "chmod":
@@ -220,8 +222,8 @@ def on_message(client, userdata, msg):
         try:
             os.chmod(SERVER_PATH + chmod_data["path"], chmod_data["mode"])
             client.publish(CHMOD_TOPIC, "0", qos=2)
-        except OSError:
-            client.publish(CHMOD_TOPIC, "1", qos=2)
+        except OSError as e:
+            client.publish(CHMOD_TOPIC, e.errno, qos=2)
 
     if topic[-1] == "mkdir":
         json_mkdir = msg.payload.decode()
@@ -232,8 +234,8 @@ def on_message(client, userdata, msg):
             client.publish(MKDIR_TOPIC, "0", qos=2)
 
         #por ejemplo, si tratas de crear un directorio con el nombre de un directorio ya existente
-        except OSError:
-            client.publish(MKDIR_TOPIC, "1", qos=2)
+        except OSError as e:
+            client.publish(MKDIR_TOPIC, e.errno, qos=2)
 
     if topic[-1] == "rmdir":
         path = msg.payload.decode()
@@ -244,8 +246,8 @@ def on_message(client, userdata, msg):
 
         # por ejemplo, si tratas de eliminar un directorio con el nombre de un directorio no existente
         # o si tratas de eliminar un directorio que aun contiene ficheros dentro
-        except OSError:
-            client.publish(RMDIR_TOPIC, "1", qos=2)
+        except OSError as e:
+            client.publish(RMDIR_TOPIC, e.errno, qos=2)
 
 
 

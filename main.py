@@ -140,18 +140,19 @@ class MqttFS(Operations):
 
             response = sync("getattr", self.pending_requests)
 
-            if response != "1":
-                list_stat = json.loads(response)
+            #TODO: poner el tipo en el comentario siguiente:
+            #list stat sera XXX si la operacion tuvo exito, y un integer en caso de error
+            list_stat = json.loads(response)
+            if not isinstance(list_stat, int):
                 return list_stat
             else:
-                raise FuseOSError(errno.ENOENT)
+                raise FuseOSError(list_stat)
 
     #TODO: implementar manejo de excepciones, para el caso en el que no tengas ficheros de apertura para un fichero
     #TODO: hacer lo mismo para write/read
     def open(self, path, flags):
-        open_data = {}
-        open_data["path"] = path
-        open_data["flags"] = flags
+        open_data = {"path": path, "flags": flags}
+
         json_open = json.dumps(open_data)
         self.client.publish(REQUEST_OPEN_TOPIC, json_open, qos=2) # TODO: decidir que qos implemento ?
 
@@ -163,9 +164,7 @@ class MqttFS(Operations):
 
     def read(self, path, size, offset, fh):
 
-        read_data = {}
-        read_data["fh"] = fh
-        read_data["size"] = size
+        read_data = {"fh": fh, "size": size}
         json_read = json.dumps(read_data)
 
         self.client.publish(REQUEST_READ_TOPIC, json_read, qos=2)  # Solicitamos lectura.      Para el read considero qos --> At least once
@@ -181,10 +180,7 @@ class MqttFS(Operations):
 
 
     def write(self, path, data, offset, fh):
-        #TODO: poner todos los diccionarios en una linea
         write_data = {}
-
-        #write_data["text"] = data.decode()
         write_data["file_handle"] = fh
         write_data["text"] = base64.b64encode(data).decode()
 
@@ -201,12 +197,10 @@ class MqttFS(Operations):
 
     def truncate(self, path, length, fh):
 
-        truncate_data = {}
-        truncate_data["fh"] = fh
-        truncate_data["length"] = length
-        json_read = json.dumps(truncate_data)
+        truncate_data = {"fh": fh, "length": length}
+        json_truncate = json.dumps(truncate_data)
 
-        self.client.publish(REQUEST_TRUNCATE_TOPIC, json_read, qos=2)  # TODO: ver que qos implemento
+        self.client.publish(REQUEST_TRUNCATE_TOPIC, json_truncate, qos=2)  # TODO: ver que qos implemento
 
         #TODO: realmente esto se podria quitar y hacer un return None????
         response = sync("truncate", self.pending_requests)
@@ -214,13 +208,11 @@ class MqttFS(Operations):
         return response
 
     def create(self, path, mode, fi=None):
-        create_data = {}
+        create_data = {"path": path, "mode":mode}
 
-        create_data["path"] = path
-        create_data["mode"] = mode
-        json_read = json.dumps(create_data)
+        json_create = json.dumps(create_data)
 
-        self.client.publish(REQUEST_CREATE_TOPIC, json_read,
+        self.client.publish(REQUEST_CREATE_TOPIC, json_create,
                             qos=2)  # Solicitamos lectura.      Para el read considero qos --> At least once
 
         response = sync("create", self.pending_requests)
@@ -239,12 +231,11 @@ class MqttFS(Operations):
 
         response = sync("rename", self.pending_requests)
 
-        if response != "1":
+        if response == "0":
             return None
         else:
             #Si ha fallado la operacion de rename mandaremos error de que el sistema es read-only file system por defecto
-            #TODO: implementar una forma mas generica del rollo:        except OSError as e:    raise FuseOSError(e.errno)
-            raise FuseOSError(errno.EROFS)
+            raise FuseOSError(int(response))
 
     # PARA EL CIERRE DE ARCHIVOS:
 
@@ -255,12 +246,11 @@ class MqttFS(Operations):
 
         response = sync("unlink", self.pending_requests)
 
-        if response != "1":
+        if response == "0":
             return None
         else:
             #Si ha fallado la operacion de unlink mandaremos error de que el sistema es read-only file system por defecto
-            #TODO: implementar una forma mas generica del rollo:        except OSError as e:    raise FuseOSError(e.errno)
-            raise FuseOSError(errno.EROFS)
+            raise FuseOSError(int(response))
 
 
 
@@ -298,11 +288,10 @@ class MqttFS(Operations):
 
         response = sync("chmod", self.pending_requests)
 
-        if response != "1":
+        if response == "0":
             return None
         else:
-            # TODO: implementar una forma mas generica del rollo:        except OSError as e:    raise FuseOSError(e.errno)
-            raise FuseOSError(errno.EROFS)
+            raise FuseOSError(int(response))
 
 
     #TODO: comprobar si no funciona al estar el directorio montado en mi espacio de usuario, y por ese motivo otro usuario
@@ -316,11 +305,10 @@ class MqttFS(Operations):
 
         response = sync("chown", self.pending_requests)
 
-        if response != "1":
+        if response == "0":
             return None
         else:
-            # TODO: implementar una forma mas generica del rollo:        except OSError as e:    raise FuseOSError(e.errno)
-            raise FuseOSError(errno.EROFS)
+           raise FuseOSError(int(response))
 
     #OPERACIONES PARA DIRECTORIO:
     
@@ -342,11 +330,10 @@ class MqttFS(Operations):
 
         response = sync("mkdir", self.pending_requests)
 
-        if response != "1":
+        if response == "0":
             return None
         else:
-            # TODO: implementar una forma mas generica del rollo:        except OSError as e:    raise FuseOSError(e.errno)
-            raise FuseOSError(errno.EROFS)
+            raise FuseOSError(int(response))
 
     def rmdir(self, path):
 
@@ -355,11 +342,10 @@ class MqttFS(Operations):
 
         response = sync("rmdir", self.pending_requests)
 
-        if response != "1":
+        if response == "0":
             return None
         else:
-            # TODO: implementar una forma mas generica del rollo:        except OSError as e:    raise FuseOSError(e.errno)
-            raise FuseOSError(errno.EROFS)
+            raise FuseOSError(int(response))
 
 
 if __name__ == "__main__":

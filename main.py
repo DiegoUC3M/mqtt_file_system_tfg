@@ -1,12 +1,8 @@
-import errno
-import os
 import paho.mqtt.client as mqtt
 import json
 import time
 from fuse import FUSE, FuseOSError, Operations
-from stat import S_IFDIR
 import subprocess #para el comando de fusermount
-import re #TODO ver si se elimina, es para el regex del getattr
 import base64 #TODO ver si se elimina
 
 
@@ -25,8 +21,8 @@ REQUEST_GETATTR_TOPIC = "/topic/request/getattr"
 OPEN_TOPIC = "/topic/open"
 REQUEST_OPEN_TOPIC = "/topic/request/open"
 
-TRUNCATE_TOPIC = "/topic/truncate"
-REQUEST_TRUNCATE_TOPIC = "/topic/request/truncate"
+FTRUNCATE_TOPIC = "/topic/ftruncate"
+REQUEST_FTRUNCATE_TOPIC = "/topic/request/ftruncate"
 
 CREATE_TOPIC = "/topic/create"
 REQUEST_CREATE_TOPIC = "/topic/request/create"
@@ -55,6 +51,9 @@ REQUEST_MKDIR_TOPIC = "/topic/request/mkdir"
 RMDIR_TOPIC = "/topic/rmdir"
 REQUEST_RMDIR_TOPIC = "/topic/request/rmdir"
 
+TRUNCATE_TOPIC = "/topic/truncate"
+REQUEST_TRUNCATE_TOPIC = "/topic/request/truncate"
+
 CLIENT_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_cliente"
 
 
@@ -68,7 +67,7 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(GETATTR_TOPIC)
         client.subscribe(OPEN_TOPIC)
         client.subscribe(WRITE_TOPIC)
-        client.subscribe(TRUNCATE_TOPIC)
+        client.subscribe(FTRUNCATE_TOPIC)
         client.subscribe(CREATE_TOPIC)
         client.subscribe(RENAME_TOPIC)
         client.subscribe(UNLINK_TOPIC)
@@ -78,6 +77,7 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(CHMOD_TOPIC)
         client.subscribe(MKDIR_TOPIC)
         client.subscribe(RMDIR_TOPIC)
+        client.subscribe(TRUNCATE_TOPIC)
     else:
         print("Error al intentar conectase al broker")
 
@@ -125,28 +125,16 @@ class MqttFS(Operations):
 
     def getattr(self, path, fh=None):
 
-        #TODO: este bloque ahora se podria quitar porque estoy manejando las excepciones abajo
-        if re.compile(r"^\/\.Trash").match(path) or path in ["/.xdg-volume-info", "/autorun.inf", "/.hidden"]:
-            raise FuseOSError(errno.ENOENT)
+        self.client.publish(REQUEST_GETATTR_TOPIC, path, qos=2)  # TODO: decidir que qos implemento ?
 
-        #Esta linea esta implementada por que el sistema llama mucho a "/" al principio (no se por que), y mi gestor FUSE no es capaz de procesar secuencialmente todas
-        #estas peticiones, este trozo de codigo habria que cambiarlo. Se queda de momento para pruebas
+        response = sync("getattr", self.pending_requests)
 
-        elif path == "/":
-            return dict(st_mode=(S_IFDIR | 0o755), st_nlink=2) #La implementacion de fuse.py original
-
+        #list_stat sera un diccionario si la operacion tuvo exito, y un integer en caso de error
+        list_stat = json.loads(response)
+        if not isinstance(list_stat, int):
+            return list_stat
         else:
-            self.client.publish(REQUEST_GETATTR_TOPIC, path, qos=2)  # TODO: decidir que qos implemento ?
-
-            response = sync("getattr", self.pending_requests)
-
-            #TODO: poner el tipo en el comentario siguiente:
-            #list stat sera XXX si la operacion tuvo exito, y un integer en caso de error
-            list_stat = json.loads(response)
-            if not isinstance(list_stat, int):
-                return list_stat
-            else:
-                raise FuseOSError(list_stat)
+            raise FuseOSError(list_stat)
 
     #TODO: implementar manejo de excepciones, para el caso en el que no tengas ficheros de apertura para un fichero
     #TODO: hacer lo mismo para write/read
@@ -195,17 +183,21 @@ class MqttFS(Operations):
 
         return num_bytes_written
 
-    def truncate(self, path, length, fh):
+    def ftruncate(self, path, length, fh):
 
-        truncate_data = {"fh": fh, "length": length}
+        ftruncate_data = {"fh": fh, "length": length}
+        json_ftruncate = json.dumps(ftruncate_data)
+        self.client.publish(REQUEST_FTRUNCATE_TOPIC, json_ftruncate, qos=2)  # TODO: ver que qos implemento
+
+        return None
+
+    def truncate(self, path, length):
+        truncate_data = {"path": path, "length": length}
         json_truncate = json.dumps(truncate_data)
-
         self.client.publish(REQUEST_TRUNCATE_TOPIC, json_truncate, qos=2)  # TODO: ver que qos implemento
 
-        #TODO: realmente esto se podria quitar y hacer un return None????
-        response = sync("truncate", self.pending_requests)
+        return None
 
-        return response
 
     def create(self, path, mode, fi=None):
         create_data = {"path": path, "mode":mode}

@@ -1,12 +1,9 @@
 import errno
 import os
-import sys
-
 import paho.mqtt.client as mqtt
 import json
 import subprocess #para el comando de mosquitto
-import re #TODO ver si se elimina, es para el regex del write para los .swp
-import base64 #TODO ver si se elimina
+import base64
 
 REQUEST_WRITE_TOPIC = "/topic/request/write"
 WRITE_TOPIC = "/topic/write"
@@ -22,8 +19,8 @@ REQUEST_GETATTR_TOPIC = "/topic/request/getattr"
 OPEN_TOPIC = "/topic/open"
 REQUEST_OPEN_TOPIC = "/topic/request/open"
 
-TRUNCATE_TOPIC = "/topic/truncate"
-REQUEST_TRUNCATE_TOPIC = "/topic/request/truncate"
+FTRUNCATE_TOPIC = "/topic/ftruncate"
+REQUEST_FTRUNCATE_TOPIC = "/topic/request/ftruncate"
 
 CREATE_TOPIC = "/topic/create"
 REQUEST_CREATE_TOPIC = "/topic/request/create"
@@ -52,6 +49,9 @@ REQUEST_MKDIR_TOPIC = "/topic/request/mkdir"
 RMDIR_TOPIC = "/topic/rmdir"
 REQUEST_RMDIR_TOPIC = "/topic/request/rmdir"
 
+TRUNCATE_TOPIC = "/topic/truncate"
+REQUEST_TRUNCATE_TOPIC = "/topic/request/truncate"
+
 SERVER_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_servidor"
 
 
@@ -63,7 +63,7 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(REQUEST_READ_DIR_TOPIC)
         client.subscribe(REQUEST_GETATTR_TOPIC)
         client.subscribe(REQUEST_OPEN_TOPIC)
-        client.subscribe(REQUEST_TRUNCATE_TOPIC)
+        client.subscribe(REQUEST_FTRUNCATE_TOPIC)
         client.subscribe(REQUEST_CREATE_TOPIC)
         client.subscribe(REQUEST_RENAME_TOPIC)
         client.subscribe(REQUEST_UNLINK_TOPIC)
@@ -73,13 +73,13 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(REQUEST_CHMOD_TOPIC)
         client.subscribe(REQUEST_MKDIR_TOPIC)
         client.subscribe(REQUEST_RMDIR_TOPIC)
+        client.subscribe(REQUEST_TRUNCATE_TOPIC)
     else:
         print("Error al intentar conectase al broker")
 
 #TODO: limpiar todos los msg.payload.decode() que realmente no son necesarios
 #TODO: pensar una forma mas generica de implementar algunas de las funciones, o pensar si merece
                                             #la pena, ya que muchas de ellas se parecen bastante
-#TODO: sustituir todas las concatenaciones que hecho del tipo server_path+path por un --> os.path.join
 def on_message(client, userdata, msg):
     topic = msg.topic.split('/')
 
@@ -88,7 +88,7 @@ def on_message(client, userdata, msg):
         json_open = msg.payload.decode()
         open_data = json.loads(json_open)
 
-        fd = os.open(SERVER_PATH + open_data["path"], open_data["flags"]) #TODO: Como hago para los flags a la hora de determinar si lo quiero para leer o escribir ???
+        fd = os.open(SERVER_PATH + open_data["path"], open_data["flags"])
 
         client.publish(OPEN_TOPIC, fd, qos=2)  # TODO: decidir que qos implemento ?
 
@@ -103,16 +103,22 @@ def on_message(client, userdata, msg):
         num_bytes_written = os.write(fh, write_data)
         client.publish(WRITE_TOPIC, num_bytes_written, qos=2)
 
-    if topic[-1] == "truncate":
-        json_read = msg.payload.decode()
-        truncate_data = json.loads(json_read)
+    if topic[-1] == "ftruncate":
+        json_ftruncate = msg.payload.decode()
+        ftruncate_data = json.loads(json_ftruncate)
 
-        #TODO: cambiar implementacion, el truncate realmente no devuelve nada
-        truncate_op = os.ftruncate(truncate_data["fh"], truncate_data["length"])
-        client.publish(TRUNCATE_TOPIC, truncate_op, qos=2)
+        os.ftruncate(ftruncate_data["fh"], ftruncate_data["length"])
+        #client.publish(FTRUNCATE_TOPIC, "0", qos=2)
+
+
+    if topic[-1] == "truncate":
+        json_truncate = msg.payload.decode()
+        truncate_data = json.loads(json_truncate)
+
+        os.truncate(SERVER_PATH + truncate_data["path"], truncate_data["length"])
+        #client.publish(TRUNCATE_TOPIC, "0", qos=2)
 
     if topic[-1] == "create":
-        print("llama a create")
         json_create = msg.payload.decode()
         create_data = json.loads(json_create)
 
@@ -135,7 +141,6 @@ def on_message(client, userdata, msg):
             # Publicamos los datos para que los reciba el cliente que ha solicitado la lectura:
             client.publish(READ_TOPIC, json_read, qos=2)
 
-        #TODO: manejar las excepciones de la v1
         except OSError as e:
             client.publish(READ_TOPIC, e.errno, qos=1)
 

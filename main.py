@@ -98,8 +98,10 @@ class MqttFS(Operations):
         response = sync("open", self.pending_requests)
 
         file_handle = json.loads(response)
-
-        return file_handle
+        if isinstance(file_handle, int):
+            return file_handle
+        else:
+            raise FuseOSError(file_handle["error"])
 
     def read(self, path, size, offset, fh):
 
@@ -131,7 +133,11 @@ class MqttFS(Operations):
         response = sync("write", self.pending_requests)
         num_bytes_written = json.loads(response)
 
-        return num_bytes_written
+        if isinstance(num_bytes_written, int):
+            return num_bytes_written
+        else:
+            raise FuseOSError(num_bytes_written["error"])
+
 
     def ftruncate(self, path, length, fh):
 

@@ -41,9 +41,14 @@ def on_message(client, userdata, msg):
         json_open = msg.payload.decode()
         open_data = json.loads(json_open)
 
-        fd = os.open(SERVER_PATH + open_data["path"], open_data["flags"])
+        try:
+            fd = os.open(SERVER_PATH + open_data["path"], open_data["flags"])
+            fd_json = json.dumps(fd)
+            client.publish(OPEN_TOPIC, fd_json, qos=1)
+        except OSError as e:
+            err_code = json.dumps({"error": e.errno})
+            client.publish(OPEN_TOPIC, err_code, qos=1)
 
-        client.publish(OPEN_TOPIC, fd, qos=1)
 
     if topic[-1] == "write":
 
@@ -53,8 +58,14 @@ def on_message(client, userdata, msg):
 
         write_data = base64.b64decode(dict_data["text"])
 
-        num_bytes_written = os.write(fh, write_data)
-        client.publish(WRITE_TOPIC, num_bytes_written, qos=1)
+        try:
+            num_bytes_written = os.write(fh, write_data)
+            client.publish(WRITE_TOPIC, json.dumps(num_bytes_written), qos=1)
+        except OSError as e:
+            err_code = json.dumps({"error": e.errno})
+            client.publish(WRITE_TOPIC, err_code, qos=1)
+
+
 
     if topic[-1] == "ftruncate":
         json_ftruncate = msg.payload.decode()

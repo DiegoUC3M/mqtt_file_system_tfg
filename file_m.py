@@ -43,7 +43,7 @@ def on_message(client, userdata, msg):
 
         fd = os.open(SERVER_PATH + open_data["path"], open_data["flags"])
 
-        client.publish(OPEN_TOPIC, fd, qos=2)  # TODO: decidir que qos implemento ?
+        client.publish(OPEN_TOPIC, fd, qos=1)
 
     if topic[-1] == "write":
 
@@ -54,14 +54,14 @@ def on_message(client, userdata, msg):
         write_data = base64.b64decode(dict_data["text"])
 
         num_bytes_written = os.write(fh, write_data)
-        client.publish(WRITE_TOPIC, num_bytes_written, qos=2)
+        client.publish(WRITE_TOPIC, num_bytes_written, qos=1)
 
     if topic[-1] == "ftruncate":
         json_ftruncate = msg.payload.decode()
         ftruncate_data = json.loads(json_ftruncate)
 
         os.ftruncate(ftruncate_data["fh"], ftruncate_data["length"])
-        #client.publish(FTRUNCATE_TOPIC, "0", qos=2)
+        #client.publish(FTRUNCATE_TOPIC, "0", qos=1)
 
 
     if topic[-1] == "truncate":
@@ -69,14 +69,14 @@ def on_message(client, userdata, msg):
         truncate_data = json.loads(json_truncate)
 
         os.truncate(SERVER_PATH + truncate_data["path"], truncate_data["length"])
-        #client.publish(TRUNCATE_TOPIC, "0", qos=2)
+        #client.publish(TRUNCATE_TOPIC, "0", qos=1)
 
     if topic[-1] == "create":
         json_create = msg.payload.decode()
         create_data = json.loads(json_create)
 
         file_handle = os.open(SERVER_PATH + create_data["path"],  os.O_WRONLY | os.O_CREAT, create_data["mode"])
-        client.publish(CREATE_TOPIC, file_handle, qos=2)
+        client.publish(CREATE_TOPIC, file_handle, qos=1)
 
 
     if topic[-1] == "read":
@@ -107,7 +107,7 @@ def on_message(client, userdata, msg):
 
         files_json = json.dumps(parentPath)
 
-        client.publish(READDIR_TOPIC, files_json, qos=2)  # TODO: decidir que qos implemento ?
+        client.publish(READDIR_TOPIC, files_json, qos=1)
 
 
     if topic[-1] == "getattr":
@@ -122,12 +122,12 @@ def on_message(client, userdata, msg):
                 file_attr_dict[k] = getattr(file_attr_struct, k)
 
             files_attr_json = json.dumps(file_attr_dict)
-            client.publish(GETATTR_TOPIC, files_attr_json, qos=2)  # TODO: decidir que qos implemento ?
+            client.publish(GETATTR_TOPIC, files_attr_json, qos=1)
 
         except OSError as e:
             #no se manda el error porque    -->    TypeError: Object of type type is not JSON serializable
             err_code = json.dumps(e.errno)
-            client.publish(GETATTR_TOPIC, err_code, qos=2)
+            client.publish(GETATTR_TOPIC, err_code, qos=1)
 
 
     if topic[-1] == "rename":
@@ -138,18 +138,18 @@ def on_message(client, userdata, msg):
             os.rename(SERVER_PATH + rename_data["old"], SERVER_PATH + rename_data["new"])
             #Hay que publicar igualmente aunque en caso de exito no devuelva nada, para que en el sync no se quede en el bucle indefinidamente y poder cubrir el caso de error (el de poder
                                                                                                                                                               #mandar el 1 si falla)
-            client.publish(RENAME_TOPIC, "0", qos=2)
+            client.publish(RENAME_TOPIC, "0", qos=1)
         except OSError as e:
-            client.publish(RENAME_TOPIC, e.errno, qos=2)
+            client.publish(RENAME_TOPIC, e.errno, qos=1)
 
 
     if topic[-1] == "unlink":
         path = msg.payload.decode()
         try:
             os.unlink(SERVER_PATH + path)
-            client.publish(UNLINK_TOPIC, "0", qos=2)
+            client.publish(UNLINK_TOPIC, "0", qos=1)
         except OSError as e:
-            client.publish(UNLINK_TOPIC, e.errno, qos=2)
+            client.publish(UNLINK_TOPIC, e.errno, qos=1)
 
     if topic[-1] == "flush_fsync":
 
@@ -168,9 +168,9 @@ def on_message(client, userdata, msg):
 
         try:
             os.chown(SERVER_PATH + chown_data["path"], chown_data["uid"], chown_data["gid"])
-            client.publish(CHOWN_TOPIC, "0", qos=2)
+            client.publish(CHOWN_TOPIC, "0", qos=1)
         except OSError as e:
-            client.publish(CHOWN_TOPIC, e.errno, qos=2)
+            client.publish(CHOWN_TOPIC, e.errno, qos=1)
 
 
     if topic[-1] == "chmod":
@@ -179,9 +179,9 @@ def on_message(client, userdata, msg):
 
         try:
             os.chmod(SERVER_PATH + chmod_data["path"], chmod_data["mode"])
-            client.publish(CHMOD_TOPIC, "0", qos=2)
+            client.publish(CHMOD_TOPIC, "0", qos=1)
         except OSError as e:
-            client.publish(CHMOD_TOPIC, e.errno, qos=2)
+            client.publish(CHMOD_TOPIC, e.errno, qos=1)
 
     if topic[-1] == "mkdir":
         json_mkdir = msg.payload.decode()
@@ -189,23 +189,23 @@ def on_message(client, userdata, msg):
 
         try:
             os.mkdir(SERVER_PATH + mkdir_data["path"], mkdir_data["mode"])
-            client.publish(MKDIR_TOPIC, "0", qos=2)
+            client.publish(MKDIR_TOPIC, "0", qos=1)
 
         #por ejemplo, si tratas de crear un directorio con el nombre de un directorio ya existente
         except OSError as e:
-            client.publish(MKDIR_TOPIC, e.errno, qos=2)
+            client.publish(MKDIR_TOPIC, e.errno, qos=1)
 
     if topic[-1] == "rmdir":
         path = msg.payload.decode()
 
         try:
             os.rmdir(SERVER_PATH + path)
-            client.publish(RMDIR_TOPIC, "0", qos=2)
+            client.publish(RMDIR_TOPIC, "0", qos=1)
 
         # por ejemplo, si tratas de eliminar un directorio con el nombre de un directorio no existente
         # o si tratas de eliminar un directorio que aun contiene ficheros dentro
         except OSError as e:
-            client.publish(RMDIR_TOPIC, e.errno, qos=2)
+            client.publish(RMDIR_TOPIC, e.errno, qos=1)
 
 
 

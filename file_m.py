@@ -106,7 +106,9 @@ def on_message(client, userdata, msg):
             client.publish(READ_TOPIC, json_read, qos=2)
 
         except OSError as e:
-            client.publish(READ_TOPIC, e.errno, qos=1)
+            err_code = json.dumps(e.errno)
+            client.publish(READ_TOPIC, err_code, qos=1)
+
 
     if topic[-1] == "readDir":
 

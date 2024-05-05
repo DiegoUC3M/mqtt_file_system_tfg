@@ -111,13 +111,15 @@ class MqttFS(Operations):
         self.client.publish(REQUEST_READ_TOPIC, json_read, qos=1)  # Solicitamos lectura.      Para el read considero qos --> At least once
 
         response = sync("read", self.pending_requests)
+        read_value = json.loads(response)
 
-        read_dict = json.loads(response)
-        datos_leidos = base64.b64decode(read_dict["datos_b64"])
+        if isinstance(read_value, dict):
+            datos_leidos = base64.b64decode(read_value["datos_b64"])
 
-        #necesario devolver literal de bytes:
-        return datos_leidos
-
+            # necesario devolver literal de bytes:
+            return datos_leidos
+        else:
+            raise FuseOSError(read_value)
 
 
     def write(self, path, data, offset, fh):

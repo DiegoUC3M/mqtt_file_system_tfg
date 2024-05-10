@@ -2,16 +2,16 @@ import paho.mqtt.client as mqtt
 import json
 import time
 from fuse import FUSE, FuseOSError, Operations
-import subprocess #para el comando de fusermount
+import subprocess  #para el comando de fusermount
 import base64
 from constants import *
+from functools import partial
+
 
 CLIENT_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_cliente"
 
 
-
 def on_connect(client, userdata, flags, rc):
-
     if rc == 0:
         print("Se ha conectado al broker con exito\n")
         client.subscribe(READ_TOPIC)  # Para recibir los datos de vuelta
@@ -44,11 +44,36 @@ def on_message(client, userdata, msg):
 
     userdata[topic[-1]] = msg.payload.decode()
 
-def sync(op, pending_requests):
 
+def sync(op, pending_requests):
     while pending_requests.get(op) is None:
         time.sleep(0.1)
     return pending_requests.pop(op)
+
+
+#De momento para pobar:
+def response_handler(op, key, pending_requests):
+    response = sync(op, pending_requests)
+    response_loaded = json.loads(response)
+
+    if isinstance(response_loaded, dict):
+        return response_loaded[key]
+    else:
+        raise FuseOSError(response_loaded)
+
+
+def no_response_handler(data, topic, op, client, pending_requests):
+
+    #si data no es un str, lo serializamos con json
+    if not isinstance(data, str):
+        data = json.dumps(data)
+    client.publish(topic, data, qos=2)
+
+    response = sync(op, pending_requests)
+    if response == "0":
+        return None
+    else:
+        raise FuseOSError(int(response))
 
 
 class MqttFS(Operations):
@@ -61,6 +86,10 @@ class MqttFS(Operations):
         self.client.on_message = on_message
         self.client.on_publish = on_publish
         self.client.connect("localhost", 1883, 60)
+
+        self.no_response_handler = partial(no_response_handler, client=self.client, pending_requests=self.pending_requests)
+        self.response_handler = partial(response_handler, pending_requests=self.pending_requests)
+
         self.client.loop_start()
 
     #TODO: ESTUDIAR EL POSIBLE MANEJO DE ERRORES DE TODAS LAS OPERACIONES
@@ -73,16 +102,14 @@ class MqttFS(Operations):
 
         return listdir
 
-
     def getattr(self, path, fh=None):
 
         self.client.publish(REQUEST_GETATTR_TOPIC, path, qos=1)
 
         response = sync("getattr", self.pending_requests)
 
-        #list_stat sera un diccionario si la operacion tuvo exito, y un integer en caso de error
         list_stat = json.loads(response)
-        if not isinstance(list_stat, int):
+        if isinstance(list_stat, dict):
             return list_stat
         else:
             raise FuseOSError(list_stat)
@@ -94,14 +121,17 @@ class MqttFS(Operations):
 
         json_open = json.dumps(open_data)
         self.client.publish(REQUEST_OPEN_TOPIC, json_open, qos=1)
-
+        '''
         response = sync("open", self.pending_requests)
-
+        
+        
         file_handle = json.loads(response)
-        if isinstance(file_handle, int):
-            return file_handle
+        if isinstance(file_handle, dict):
+            return file_handle["fd"]
         else:
-            raise FuseOSError(file_handle["error"])
+            raise FuseOSError(file_handle)
+        '''
+        return response_handler("open", "fd")
 
     def read(self, path, size, offset, fh):
 
@@ -121,25 +151,24 @@ class MqttFS(Operations):
         else:
             raise FuseOSError(read_value)
 
-
     def write(self, path, data, offset, fh):
         write_data = {}
         write_data["file_handle"] = fh
         write_data["text"] = base64.b64encode(data).decode()
 
-
         datos_json = json.dumps(write_data)
 
         self.client.publish(REQUEST_WRITE_TOPIC, datos_json, qos=2)  # Solicito escritura.        qos --> "Exactly once" para evitar duplicados
-
+        '''
         response = sync("write", self.pending_requests)
         num_bytes_written = json.loads(response)
 
-        if isinstance(num_bytes_written, int):
-            return num_bytes_written
+        if isinstance(num_bytes_written, dict):
+            return num_bytes_written["num_bytes_written"]
         else:
-            raise FuseOSError(num_bytes_written["error"])
-
+            raise FuseOSError(num_bytes_written)
+        '''
+        return response_handler("write", "num_bytes_written")
 
     def ftruncate(self, path, length, fh):
 
@@ -156,21 +185,20 @@ class MqttFS(Operations):
 
         return None
 
-
     def create(self, path, mode, fi=None):
-        create_data = {"path": path, "mode":mode}
+        create_data = {"path": path, "mode": mode}
 
         json_create = json.dumps(create_data)
 
         self.client.publish(REQUEST_CREATE_TOPIC, json_create, qos=2)
 
         response = sync("create", self.pending_requests)
-        file_handle = json.loads(response) #si no  haces esto no detecta el integer
+        file_handle = json.loads(response)  #si no  haces esto no detecta el integer
 
         return file_handle
 
     def rename(self, old, new):
-
+        '''
         rename_data = {"old": old, "new": new}
         json_rename = json.dumps(rename_data)
 
@@ -182,12 +210,15 @@ class MqttFS(Operations):
             return None
         else:
             raise FuseOSError(int(response))
+        '''
+
+        self.no_response_handler({"old": old, "new": new}, REQUEST_RENAME_TOPIC, "rename")
 
     # PARA EL CIERRE DE ARCHIVOS:
 
     # necesario para los .swp que se generan despues del create
     def unlink(self, path):
-
+        '''
         self.client.publish(REQUEST_UNLINK_TOPIC, path, qos=2)
 
         response = sync("unlink", self.pending_requests)
@@ -196,8 +227,8 @@ class MqttFS(Operations):
             return None
         else:
             raise FuseOSError(int(response))
-
-
+        '''
+        self.no_response_handler(path, REQUEST_UNLINK_TOPIC, "unlink")
 
     # Para realizar tareas de limpieza asociadas con el cierre del archivo
     def flush(self, path, fh):
@@ -206,7 +237,6 @@ class MqttFS(Operations):
         self.client.publish(REQUEST_FLUSH_FSYNC_TOPIC, fh, qos=2)
 
         return 0
-
 
     # Para forzar la escritura de todos los cambios pendientes del archivo
     def fsync(self, path, datasync, fh):
@@ -224,6 +254,7 @@ class MqttFS(Operations):
     #PERMISOS:
 
     def chmod(self, path, mode):
+        '''
         chmod_data = {"path": path, "mode": mode}
         json_chmod = json.dumps(chmod_data)
 
@@ -235,7 +266,9 @@ class MqttFS(Operations):
             return None
         else:
             raise FuseOSError(int(response))
+        '''
 
+        self.no_response_handler({"path": path, "mode": mode}, REQUEST_CHMOD_TOPIC, "chmod")
     '''
     #TODO: comprobar si no funciona al estar el directorio montado en mi espacio de usuario, y por ese motivo otro usuario
     #TODO: no puede acceder, al no tener permisos de r-x para mi directorio home
@@ -265,7 +298,9 @@ class MqttFS(Operations):
     def releasedir(self, path, fh):
         return 0
     '''
+
     def mkdir(self, path, mode):
+        '''
         mkdir_data = {"path": path, "mode": mode}
         json_mkdir = json.dumps(mkdir_data)
 
@@ -276,9 +311,12 @@ class MqttFS(Operations):
             return None
         else:
             raise FuseOSError(int(response))
+        '''
+        self.no_response_handler({"path": path, "mode": mode}, REQUEST_MKDIR_TOPIC, "mkdir")
 
     def rmdir(self, path):
 
+        '''
         self.client.publish(REQUEST_RMDIR_TOPIC, path, qos=2)
         response = sync("rmdir", self.pending_requests)
 
@@ -286,12 +324,15 @@ class MqttFS(Operations):
             return None
         else:
             raise FuseOSError(int(response))
+        '''
+        self.no_response_handler(path, REQUEST_RMDIR_TOPIC, "rmdir")
+
 
 
 if __name__ == "__main__":
-
-    subprocess.run(['fusermount', '-uz', CLIENT_PATH], capture_output=False, text=True) #A veces no se desmonta el volumen aunque detengas el script
+    subprocess.run(['fusermount', '-uz', CLIENT_PATH], capture_output=False,
+                   text=True)  #A veces no se desmonta el volumen aunque detengas el script
     #TODO: borrar estas lineas para ejecutar comandos en bash
     #subprocess.run(['rmdir', CLIENT_PATH], capture_output=False, text=True)
     #subprocess.run(['mkdir', CLIENT_PATH], capture_output=False, text=True)
-    fuse = FUSE(MqttFS(), CLIENT_PATH, foreground=True, nothreads=True, debug = True)
+    fuse = FUSE(MqttFS(), CLIENT_PATH, foreground=True, nothreads=True, debug=True)

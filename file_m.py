@@ -43,10 +43,10 @@ def on_message(client, userdata, msg):
 
         try:
             fd = os.open(SERVER_PATH + open_data["path"], open_data["flags"])
-            fd_json = json.dumps(fd)
+            fd_json = json.dumps({"fd": fd})
             client.publish(OPEN_TOPIC, fd_json, qos=1)
         except OSError as e:
-            err_code = json.dumps({"error": e.errno})
+            err_code = json.dumps(e.errno)
             client.publish(OPEN_TOPIC, err_code, qos=1)
 
 
@@ -60,9 +60,9 @@ def on_message(client, userdata, msg):
 
         try:
             num_bytes_written = os.write(fh, write_data)
-            client.publish(WRITE_TOPIC, json.dumps(num_bytes_written), qos=1)
+            client.publish(WRITE_TOPIC, json.dumps({"num_bytes_written": num_bytes_written}), qos=1)
         except OSError as e:
-            err_code = json.dumps({"error": e.errno})
+            err_code = json.dumps(e.errno)
             client.publish(WRITE_TOPIC, err_code, qos=1)
 
 
@@ -223,8 +223,8 @@ def on_message(client, userdata, msg):
 
 
 def main():
-    #subprocess.run(['gnome-terminal', '--', 'bash', '-c', 'mosquitto', '-v'], capture_output=True, text=True)
-    subprocess.Popen(['xfce4-terminal', '-e', 'bash -c "mosquitto -v"'])
+    subprocess.run(['gnome-terminal', '--', 'bash', '-c', 'mosquitto', '-v'], capture_output=True, text=True)
+    #subprocess.Popen(['xfce4-terminal', '-e', 'bash -c "mosquitto -v"'])
     client = mqtt.Client(client_id="file_manager")
     client.on_connect = on_connect
     client.on_message = on_message

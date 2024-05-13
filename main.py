@@ -58,6 +58,8 @@ def response_handler(op, key, pending_requests):
 
     if isinstance(response_loaded, dict):
         return response_loaded[key]
+    elif isinstance(response_loaded, list):
+        return response_loaded #para readdir
     else:
         raise FuseOSError(response_loaded)
 
@@ -95,11 +97,7 @@ class MqttFS(Operations):
 
     def readdir(self, path, fh):
         self.client.publish(REQUEST_READ_DIR_TOPIC, path, qos=1)
-        response = sync("readDir", self.pending_requests)
-
-        listdir = json.loads(response)
-
-        return listdir
+        return self.response_handler("readDir", "")
 
     def getattr(self, path, fh=None):
 

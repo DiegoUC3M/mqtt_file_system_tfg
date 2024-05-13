@@ -111,23 +111,12 @@ class MqttFS(Operations):
         else:
             raise FuseOSError(list_stat)
 
-    #TODO: implementar manejo de excepciones, para el caso en el que no tengas ficheros de apertura para un fichero
-    #TODO: hacer lo mismo para write/read
+
     def open(self, path, flags):
         open_data = {"path": path, "flags": flags}
-
         json_open = json.dumps(open_data)
         self.client.publish(REQUEST_OPEN_TOPIC, json_open, qos=1)
-        '''
-        response = sync("open", self.pending_requests)
-        
-        
-        file_handle = json.loads(response)
-        if isinstance(file_handle, dict):
-            return file_handle["fd"]
-        else:
-            raise FuseOSError(file_handle)
-        '''
+
         return self.response_handler("open", "os_result")
 
     def read(self, path, size, offset, fh):
@@ -154,21 +143,11 @@ class MqttFS(Operations):
         write_data["text"] = base64.b64encode(data).decode()
 
         datos_json = json.dumps(write_data)
-
         self.client.publish(REQUEST_WRITE_TOPIC, datos_json, qos=2)  # Solicito escritura.        qos --> "Exactly once" para evitar duplicados
-        '''
-        response = sync("write", self.pending_requests)
-        num_bytes_written = json.loads(response)
 
-        if isinstance(num_bytes_written, dict):
-            return num_bytes_written["num_bytes_written"]
-        else:
-            raise FuseOSError(num_bytes_written)
-        '''
         return self.response_handler("write", "num_bytes_written")
 
     def ftruncate(self, path, length, fh):
-
         ftruncate_data = {"fh": fh, "length": length}
         self.no_response_handler(ftruncate_data, REQUEST_FTRUNCATE_TOPIC, "ftruncate")
 
@@ -180,26 +159,12 @@ class MqttFS(Operations):
 
     def create(self, path, mode, fi=None):
         create_data = {"path": path, "mode": mode}
-
         json_create = json.dumps(create_data)
-
         self.client.publish(REQUEST_CREATE_TOPIC, json_create, qos=2)
+
         return self.response_handler("create", "os_result")
 
     def rename(self, old, new):
-        '''
-        rename_data = {"old": old, "new": new}
-        json_rename = json.dumps(rename_data)
-
-        self.client.publish(REQUEST_RENAME_TOPIC, json_rename, qos=2)
-
-        response = sync("rename", self.pending_requests)
-
-        if response == "0":
-            return None
-        else:
-            raise FuseOSError(int(response))
-        '''
 
         self.no_response_handler({"old": old, "new": new}, REQUEST_RENAME_TOPIC, "rename")
 
@@ -207,21 +172,11 @@ class MqttFS(Operations):
 
     # necesario para los .swp que se generan despues del create
     def unlink(self, path):
-        '''
-        self.client.publish(REQUEST_UNLINK_TOPIC, path, qos=2)
 
-        response = sync("unlink", self.pending_requests)
-
-        if response == "0":
-            return None
-        else:
-            raise FuseOSError(int(response))
-        '''
         self.no_response_handler(path, REQUEST_UNLINK_TOPIC, "unlink")
 
     # Para realizar tareas de limpieza asociadas con el cierre del archivo
     def flush(self, path, fh):
-
         #lo implemento comom fsync al no existir implementacion de flush con "os"
         self.no_response_handler(fh, REQUEST_FLUSH_FSYNC_TOPIC, "flush_fsync")
 
@@ -230,14 +185,12 @@ class MqttFS(Operations):
 
     # Para forzar la escritura de todos los cambios pendientes del archivo
     def fsync(self, path, datasync, fh):
-
         self.no_response_handler(fh, REQUEST_FLUSH_FSYNC_TOPIC, "flush_fsync")
 
         return 0
 
 
     def release(self, path, fh):
-
         self.client.publish(REQUEST_RELEASE_TOPIC, fh, qos=2)
         self.no_response_handler(fh, REQUEST_RELEASE_TOPIC, "release")
 
@@ -246,21 +199,17 @@ class MqttFS(Operations):
     #PERMISOS:
 
     def chmod(self, path, mode):
-        '''
-        chmod_data = {"path": path, "mode": mode}
-        json_chmod = json.dumps(chmod_data)
-
-        self.client.publish(REQUEST_CHMOD_TOPIC, json_chmod, qos=1)
-
-        response = sync("chmod", self.pending_requests)
-
-        if response == "0":
-            return None
-        else:
-            raise FuseOSError(int(response))
-        '''
 
         self.no_response_handler({"path": path, "mode": mode}, REQUEST_CHMOD_TOPIC, "chmod")
+
+    def mkdir(self, path, mode):
+
+        self.no_response_handler({"path": path, "mode": mode}, REQUEST_MKDIR_TOPIC, "mkdir")
+
+    def rmdir(self, path):
+
+        self.no_response_handler(path, REQUEST_RMDIR_TOPIC, "rmdir")
+
     '''
     #TODO: comprobar si no funciona al estar el directorio montado en mi espacio de usuario, y por ese motivo otro usuario
     #TODO: no puede acceder, al no tener permisos de r-x para mi directorio home
@@ -278,46 +227,18 @@ class MqttFS(Operations):
            raise FuseOSError(int(response))
     '''
 
-    #OPERACIONES PARA DIRECTORIO:
+    # OPERACIONES PARA DIRECTORIO:
 
     '''
     #TODO: comprobar si se puede sustituir por ACCESS, o si es necesario realmente
-    
+
     def opendir(self, path):
 
         return 0
-    
+
     def releasedir(self, path, fh):
         return 0
     '''
-
-    def mkdir(self, path, mode):
-        '''
-        mkdir_data = {"path": path, "mode": mode}
-        json_mkdir = json.dumps(mkdir_data)
-
-        self.client.publish(REQUEST_MKDIR_TOPIC, json_mkdir, qos=2)
-        response = sync("mkdir", self.pending_requests)
-
-        if response == "0":
-            return None
-        else:
-            raise FuseOSError(int(response))
-        '''
-        self.no_response_handler({"path": path, "mode": mode}, REQUEST_MKDIR_TOPIC, "mkdir")
-
-    def rmdir(self, path):
-
-        '''
-        self.client.publish(REQUEST_RMDIR_TOPIC, path, qos=2)
-        response = sync("rmdir", self.pending_requests)
-
-        if response == "0":
-            return None
-        else:
-            raise FuseOSError(int(response))
-        '''
-        self.no_response_handler(path, REQUEST_RMDIR_TOPIC, "rmdir")
 
 
 

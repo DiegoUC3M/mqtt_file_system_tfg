@@ -33,8 +33,6 @@ def on_connect(client, userdata, flags, rc):
     else:
         print("Error al intentar conectase al broker")
 
-#TODO: pensar una forma mas generica de implementar algunas de las funciones, o pensar si merece
-                                            #la pena, ya que muchas de ellas se parecen bastante
 
 def os_func(client, topic, func, *args):
 
@@ -58,15 +56,6 @@ def on_message(client, userdata, msg):
 
         json_open = msg.payload.decode()
         open_data = json.loads(json_open)
-        '''
-        try:
-            fd = os.open(SERVER_PATH + open_data["path"], open_data["flags"])
-            fd_json = json.dumps({"fd": fd})
-            client.publish(OPEN_TOPIC, fd_json, qos=1)
-        except OSError as e:
-            err_code = json.dumps(e.errno)
-            client.publish(OPEN_TOPIC, err_code, qos=1)
-        '''
         os_func(client, OPEN_TOPIC, os.open, SERVER_PATH + open_data["path"], open_data["flags"])
 
 
@@ -165,29 +154,12 @@ def on_message(client, userdata, msg):
     if topic[-1] == "rename":
         json_rename = msg.payload.decode()
         rename_data = json.loads(json_rename)
-
-        '''
-        try:
-            os.rename(SERVER_PATH + rename_data["old"], SERVER_PATH + rename_data["new"])
-            #Hay que publicar igualmente aunque en caso de exito no devuelva nada, para que en el sync no se quede en el bucle indefinidamente y poder cubrir el caso de error (el de poder
-                                                                                                                                                              #mandar el 1 si falla)
-            client.publish(RENAME_TOPIC, "0", qos=1)
-        except OSError as e:
-            client.publish(RENAME_TOPIC, e.errno, qos=1)
-        '''
         os_func(client, RENAME_TOPIC, os.rename, SERVER_PATH + rename_data["old"], SERVER_PATH + rename_data["new"])
 
 
 
     if topic[-1] == "unlink":
         path = msg.payload.decode()
-        '''
-        try:
-            os.unlink(SERVER_PATH + path)
-            client.publish(UNLINK_TOPIC, "0", qos=1)
-        except OSError as e:
-            client.publish(UNLINK_TOPIC, e.errno, qos=1)
-        '''
         os_func(client, UNLINK_TOPIC, os.unlink, SERVER_PATH + path)
 
 
@@ -204,14 +176,6 @@ def on_message(client, userdata, msg):
     if topic[-1] == "chown":
         json_chown = msg.payload.decode()
         chown_data = json.loads(json_chown)
-
-        '''
-        try:
-            os.chown(SERVER_PATH + chown_data["path"], chown_data["uid"], chown_data["gid"])
-            client.publish(CHOWN_TOPIC, "0", qos=1)
-        except OSError as e:
-            client.publish(CHOWN_TOPIC, e.errno, qos=1)
-        '''
         os_func(client, CHOWN_TOPIC, os.chown, SERVER_PATH + chown_data["path"], chown_data["uid"], chown_data["gid"])
 
 
@@ -219,44 +183,15 @@ def on_message(client, userdata, msg):
     if topic[-1] == "chmod":
         json_chmod = msg.payload.decode()
         chmod_data = json.loads(json_chmod)
-
-        '''
-        try:
-            os.chmod(SERVER_PATH + chmod_data["path"], chmod_data["mode"])
-            client.publish(CHMOD_TOPIC, "0", qos=1)
-        except OSError as e:
-            client.publish(CHMOD_TOPIC, e.errno, qos=1)
-        '''
         os_func(client, CHMOD_TOPIC, os.chmod, SERVER_PATH + chmod_data["path"], chmod_data["mode"])
 
     if topic[-1] == "mkdir":
         json_mkdir = msg.payload.decode()
         mkdir_data = json.loads(json_mkdir)
-
-        '''
-        try:
-            os.mkdir(SERVER_PATH + mkdir_data["path"], mkdir_data["mode"])
-            client.publish(MKDIR_TOPIC, "0", qos=1)
-
-        #por ejemplo, si tratas de crear un directorio con el nombre de un directorio ya existente
-        except OSError as e:
-            client.publish(MKDIR_TOPIC, e.errno, qos=1)
-        '''
         os_func(client, MKDIR_TOPIC, os.mkdir, SERVER_PATH + mkdir_data["path"], mkdir_data["mode"])
 
     if topic[-1] == "rmdir":
         path = msg.payload.decode()
-
-        '''
-        try:
-            os.rmdir(SERVER_PATH + path)
-            client.publish(RMDIR_TOPIC, "0", qos=1)
-
-        # por ejemplo, si tratas de eliminar un directorio con el nombre de un directorio no existente
-        # o si tratas de eliminar un directorio que aun contiene ficheros dentro
-        except OSError as e:
-            client.publish(RMDIR_TOPIC, e.errno, qos=1)
-        '''
         os_func(client, RMDIR_TOPIC, os.rmdir, SERVER_PATH + path)
 
 

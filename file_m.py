@@ -5,8 +5,10 @@ import json
 import subprocess #para el comando de mosquitto
 import base64
 from constants import *
+from functools import partial
 
 SERVER_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_servidor"
+
 
 
 def on_connect(client, userdata, flags, rc):
@@ -33,6 +35,22 @@ def on_connect(client, userdata, flags, rc):
 
 #TODO: pensar una forma mas generica de implementar algunas de las funciones, o pensar si merece
                                             #la pena, ya que muchas de ellas se parecen bastante
+
+def os_func(client, topic, func, *args):
+
+    try:
+        os_result = func(*args)
+
+        if os_result != None:
+            os_result_json = json.dumps({"os_result": os_result})
+            client.publish(topic, os_result_json, qos=1)
+        #Si la funcion de la libreria os no funciona nada, se manda un 0 para manejo de excepciones:
+        else:
+            client.publish(topic, "0", qos=1)
+    except OSError as e:
+        err_code = json.dumps(e.errno)
+        client.publish(topic, err_code, qos=1)
+
 def on_message(client, userdata, msg):
     topic = msg.topic.split('/')
 
@@ -40,7 +58,7 @@ def on_message(client, userdata, msg):
 
         json_open = msg.payload.decode()
         open_data = json.loads(json_open)
-
+        '''
         try:
             fd = os.open(SERVER_PATH + open_data["path"], open_data["flags"])
             fd_json = json.dumps({"fd": fd})
@@ -48,6 +66,8 @@ def on_message(client, userdata, msg):
         except OSError as e:
             err_code = json.dumps(e.errno)
             client.publish(OPEN_TOPIC, err_code, qos=1)
+        '''
+        os_func(client, OPEN_TOPIC, os.open, SERVER_PATH + open_data["path"], open_data["flags"])
 
 
     if topic[-1] == "write":
@@ -71,23 +91,20 @@ def on_message(client, userdata, msg):
         json_ftruncate = msg.payload.decode()
         ftruncate_data = json.loads(json_ftruncate)
 
-        os.ftruncate(ftruncate_data["fh"], ftruncate_data["length"])
-        #client.publish(FTRUNCATE_TOPIC, "0", qos=1)
+        os_func(client, FTRUNCATE_TOPIC, os.ftruncate, ftruncate_data["fh"], ftruncate_data["length"])
 
 
     if topic[-1] == "truncate":
         json_truncate = msg.payload.decode()
         truncate_data = json.loads(json_truncate)
 
-        os.truncate(SERVER_PATH + truncate_data["path"], truncate_data["length"])
-        #client.publish(TRUNCATE_TOPIC, "0", qos=1)
+        os_func(client, TRUNCATE_TOPIC, os.truncate, SERVER_PATH + truncate_data["path"], truncate_data["length"])
 
     if topic[-1] == "create":
         json_create = msg.payload.decode()
         create_data = json.loads(json_create)
 
-        file_handle = os.open(SERVER_PATH + create_data["path"],  os.O_WRONLY | os.O_CREAT, create_data["mode"])
-        client.publish(CREATE_TOPIC, file_handle, qos=1)
+        os_func(client, CREATE_TOPIC, os.open, SERVER_PATH + create_data["path"], os.O_WRONLY | os.O_CREAT, create_data["mode"])
 
 
     if topic[-1] == "read":
@@ -115,12 +132,14 @@ def on_message(client, userdata, msg):
         file_path = msg.payload.decode()
         parentPath = [".", ".."]
 
-        files = os.listdir(SERVER_PATH + file_path)
-        parentPath.extend(files)
-
-        files_json = json.dumps(parentPath)
-
-        client.publish(READDIR_TOPIC, files_json, qos=1)
+        try:
+            files = os.listdir(SERVER_PATH + file_path)
+            parentPath.extend(files)
+            files_json = json.dumps(parentPath)
+            client.publish(READDIR_TOPIC, files_json, qos=1)
+        except OSError as e:
+            err_code = json.dumps(e.errno)
+            client.publish(READDIR_TOPIC, err_code, qos=1)
 
 
     if topic[-1] == "getattr":
@@ -147,6 +166,7 @@ def on_message(client, userdata, msg):
         json_rename = msg.payload.decode()
         rename_data = json.loads(json_rename)
 
+        '''
         try:
             os.rename(SERVER_PATH + rename_data["old"], SERVER_PATH + rename_data["new"])
             #Hay que publicar igualmente aunque en caso de exito no devuelva nada, para que en el sync no se quede en el bucle indefinidamente y poder cubrir el caso de error (el de poder
@@ -154,52 +174,66 @@ def on_message(client, userdata, msg):
             client.publish(RENAME_TOPIC, "0", qos=1)
         except OSError as e:
             client.publish(RENAME_TOPIC, e.errno, qos=1)
+        '''
+        os_func(client, RENAME_TOPIC, os.rename, SERVER_PATH + rename_data["old"], SERVER_PATH + rename_data["new"])
+
 
 
     if topic[-1] == "unlink":
         path = msg.payload.decode()
+        '''
         try:
             os.unlink(SERVER_PATH + path)
             client.publish(UNLINK_TOPIC, "0", qos=1)
         except OSError as e:
             client.publish(UNLINK_TOPIC, e.errno, qos=1)
+        '''
+        os_func(client, UNLINK_TOPIC, os.unlink, SERVER_PATH + path)
+
 
     if topic[-1] == "flush_fsync":
-
         fh = msg.payload.decode()
-        os.fsync(int(fh))
+        os_func(client, FLUSH_FSYNC_TOPIC, os.fsync, int(fh))
+
 
     if topic[-1] == "release":
 
         fh = msg.payload.decode()
-        os.close(int(fh))
+        os_func(client, RELEASE_TOPIC, os.close, int(fh))
 
     if topic[-1] == "chown":
         json_chown = msg.payload.decode()
         chown_data = json.loads(json_chown)
 
-
+        '''
         try:
             os.chown(SERVER_PATH + chown_data["path"], chown_data["uid"], chown_data["gid"])
             client.publish(CHOWN_TOPIC, "0", qos=1)
         except OSError as e:
             client.publish(CHOWN_TOPIC, e.errno, qos=1)
+        '''
+        os_func(client, CHOWN_TOPIC, os.chown, SERVER_PATH + chown_data["path"], chown_data["uid"], chown_data["gid"])
+
 
 
     if topic[-1] == "chmod":
         json_chmod = msg.payload.decode()
         chmod_data = json.loads(json_chmod)
 
+        '''
         try:
             os.chmod(SERVER_PATH + chmod_data["path"], chmod_data["mode"])
             client.publish(CHMOD_TOPIC, "0", qos=1)
         except OSError as e:
             client.publish(CHMOD_TOPIC, e.errno, qos=1)
+        '''
+        os_func(client, CHMOD_TOPIC, os.chmod, SERVER_PATH + chmod_data["path"], chmod_data["mode"])
 
     if topic[-1] == "mkdir":
         json_mkdir = msg.payload.decode()
         mkdir_data = json.loads(json_mkdir)
 
+        '''
         try:
             os.mkdir(SERVER_PATH + mkdir_data["path"], mkdir_data["mode"])
             client.publish(MKDIR_TOPIC, "0", qos=1)
@@ -207,10 +241,13 @@ def on_message(client, userdata, msg):
         #por ejemplo, si tratas de crear un directorio con el nombre de un directorio ya existente
         except OSError as e:
             client.publish(MKDIR_TOPIC, e.errno, qos=1)
+        '''
+        os_func(client, MKDIR_TOPIC, os.mkdir, SERVER_PATH + mkdir_data["path"], mkdir_data["mode"])
 
     if topic[-1] == "rmdir":
         path = msg.payload.decode()
 
+        '''
         try:
             os.rmdir(SERVER_PATH + path)
             client.publish(RMDIR_TOPIC, "0", qos=1)
@@ -219,6 +256,8 @@ def on_message(client, userdata, msg):
         # o si tratas de eliminar un directorio que aun contiene ficheros dentro
         except OSError as e:
             client.publish(RMDIR_TOPIC, e.errno, qos=1)
+        '''
+        os_func(client, RMDIR_TOPIC, os.rmdir, SERVER_PATH + path)
 
 
 

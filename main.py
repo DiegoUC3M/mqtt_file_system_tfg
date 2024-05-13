@@ -92,7 +92,6 @@ class MqttFS(Operations):
 
         self.client.loop_start()
 
-    #TODO: ESTUDIAR EL POSIBLE MANEJO DE ERRORES DE TODAS LAS OPERACIONES
 
     def readdir(self, path, fh):
         self.client.publish(REQUEST_READ_DIR_TOPIC, path, qos=1)
@@ -131,7 +130,7 @@ class MqttFS(Operations):
         else:
             raise FuseOSError(file_handle)
         '''
-        return response_handler("open", "fd")
+        return self.response_handler("open", "os_result")
 
     def read(self, path, size, offset, fh):
 
@@ -168,22 +167,18 @@ class MqttFS(Operations):
         else:
             raise FuseOSError(num_bytes_written)
         '''
-        return response_handler("write", "num_bytes_written")
+        return self.response_handler("write", "num_bytes_written")
 
     def ftruncate(self, path, length, fh):
 
         ftruncate_data = {"fh": fh, "length": length}
-        json_ftruncate = json.dumps(ftruncate_data)
-        self.client.publish(REQUEST_FTRUNCATE_TOPIC, json_ftruncate, qos=1)
+        self.no_response_handler(ftruncate_data, REQUEST_FTRUNCATE_TOPIC, "ftruncate")
 
-        return None
 
     def truncate(self, path, length):
         truncate_data = {"path": path, "length": length}
-        json_truncate = json.dumps(truncate_data)
-        self.client.publish(REQUEST_TRUNCATE_TOPIC, json_truncate, qos=1)
+        self.no_response_handler(truncate_data, REQUEST_TRUNCATE_TOPIC, "truncate")
 
-        return None
 
     def create(self, path, mode, fi=None):
         create_data = {"path": path, "mode": mode}
@@ -191,11 +186,7 @@ class MqttFS(Operations):
         json_create = json.dumps(create_data)
 
         self.client.publish(REQUEST_CREATE_TOPIC, json_create, qos=2)
-
-        response = sync("create", self.pending_requests)
-        file_handle = json.loads(response)  #si no  haces esto no detecta el integer
-
-        return file_handle
+        return self.response_handler("create", "os_result")
 
     def rename(self, old, new):
         '''
@@ -234,20 +225,23 @@ class MqttFS(Operations):
     def flush(self, path, fh):
 
         #lo implemento comom fsync al no existir implementacion de flush con "os"
-        self.client.publish(REQUEST_FLUSH_FSYNC_TOPIC, fh, qos=2)
+        self.no_response_handler(fh, REQUEST_FLUSH_FSYNC_TOPIC, "flush_fsync")
 
         return 0
+
 
     # Para forzar la escritura de todos los cambios pendientes del archivo
     def fsync(self, path, datasync, fh):
 
-        self.client.publish(REQUEST_FLUSH_FSYNC_TOPIC, fh, qos=2)
+        self.no_response_handler(fh, REQUEST_FLUSH_FSYNC_TOPIC, "flush_fsync")
 
         return 0
+
 
     def release(self, path, fh):
 
         self.client.publish(REQUEST_RELEASE_TOPIC, fh, qos=2)
+        self.no_response_handler(fh, REQUEST_RELEASE_TOPIC, "release")
 
         return 0
 

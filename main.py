@@ -7,6 +7,8 @@ import base64
 from constants import *
 from functools import partial
 
+from os import O_RDONLY, O_DIRECTORY
+
 CLIENT_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_cliente"
 
 
@@ -29,6 +31,9 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(RMDIR_TOPIC)
         client.subscribe(TRUNCATE_TOPIC)
         client.subscribe(ACCESS_TOPIC)
+        client.subscribe(SYMLINK_TOPIC)
+        client.subscribe(LINK_TOPIC)
+        client.subscribe(READLINK_TOPIC)
     else:
         print("Error al intentar conectase al broker")
 
@@ -173,26 +178,19 @@ class MqttFS(Operations):
         #lo implemento comom fsync al no existir implementacion de flush con "os"
         self.no_response_handler(fh, REQUEST_FLUSH_FSYNC_TOPIC, "flush_fsync")
 
-        return 0
-
     # Para forzar la escritura de todos los cambios pendientes del archivo
     def fsync(self, path, datasync, fh):
         self.no_response_handler(fh, REQUEST_FLUSH_FSYNC_TOPIC, "flush_fsync")
-
-        #devuelve 0 si exito
-        return 0
 
     # El kernel no tiene una llamada "fsyncdir", llama a fsync con el descriptor de un directorio. Esto es asi en fuse por si quieres implementar
     # logica extra
     def fsyncdir(self, path, datasync, fh):
 
-        return self.fsync(self, path, datasync, fh)
+        return self.fsync(path, datasync, fh)
 
     def release(self, path, fh):
-        self.no_response_handler(fh, REQUEST_RELEASE_TOPIC, "release")
 
-        #devuelve 0 si exito
-        return 0
+        self.no_response_handler(fh, REQUEST_RELEASE_TOPIC, "release")
 
     #PERMISOS:
 
@@ -226,11 +224,30 @@ class MqttFS(Operations):
             raise (FuseOSError(access_value))
 
     def opendir(self, path):
-
-        return self.response_handler("open", "os_result")
+        #O_DIRECTORY comprueba que se esta abriendo directorio
+        return self.open(path, O_RDONLY | O_DIRECTORY)
 
     def releasedir(self, path, fh):
-        return 0
+
+        self.release(path, fh)
+
+    #ENLACES:
+
+    def symlink(self, target, source):
+
+        symlink_data = {"source": source, "target": target}
+        self.no_response_handler(symlink_data, REQUEST_SYMLINK_TOPIC, "symlink")
+
+    def link(self, target, source):
+        #Crea enlace duro
+        link_data = {"source": source, "target": target}
+        self.no_response_handler(link_data, REQUEST_LINK_TOPIC, "link")
+
+
+    def readlink(self, path):
+
+        self.client.publish(REQUEST_READLINK_TOPIC, path, qos=2)
+        return self.response_handler("readlink", "os_result")
 
 
 

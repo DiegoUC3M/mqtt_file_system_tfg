@@ -45,3 +45,12 @@ REQUEST_TRUNCATE_TOPIC = "/topic/request/truncate"
 
 ACCESS_TOPIC = "/topic/access"
 REQUEST_ACCESS_TOPIC = "/topic/request/access"
+
+SYMLINK_TOPIC = "/topic/symlink"
+REQUEST_SYMLINK_TOPIC = "/topic/request/symlink"
+
+LINK_TOPIC = "/topic/link"
+REQUEST_LINK_TOPIC = "/topic/request/link"
+
+READLINK_TOPIC = "/topic/readlink"
+REQUEST_READLINK_TOPIC = "/topic/request/readlink"

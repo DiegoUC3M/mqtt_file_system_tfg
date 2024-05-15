@@ -9,13 +9,6 @@ from functools import partial
 
 SERVER_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_servidor"
 
-#TODO:
-# opendir, releasedir
-# symlink
-# link
-# readlink --> leer enlaces simbolicos. readlink /mnt/fuse/symlink --------- Usa os.readlink(path) para obtener la ruta de destino del enlace simbólico.
-
-
 
 # Descartados
 # mknod (crear i-nodos, tuberias fifo, etc)
@@ -48,10 +41,12 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(REQUEST_RMDIR_TOPIC)
         client.subscribe(REQUEST_TRUNCATE_TOPIC)
         client.subscribe(REQUEST_ACCESS_TOPIC)
+        client.subscribe(REQUEST_SYMLINK_TOPIC)
+        client.subscribe(REQUEST_LINK_TOPIC)
+        client.subscribe(REQUEST_READLINK_TOPIC)
     else:
         print("Error al intentar conectase al broker")
 
-#TODO: organizar mejor las funciones, darles un orden
 
 def os_func(client, topic, func, *args):
 
@@ -67,6 +62,10 @@ def os_func(client, topic, func, *args):
     except OSError as e:
         err_code = json.dumps(e.errno)
         client.publish(topic, err_code, qos=1)
+
+#TODO: organizar mejor las funciones, darles un orden
+#TODO: mejorar los tiempos. Sobre todo al principio de la ejecucion del programa que busca archivos que no necesita. Tambien sospecho que puede ser por una papelera muy grande --> Trash-1000
+
 
 def on_message(client, userdata, msg):
     topic = msg.topic.split('/')
@@ -147,7 +146,7 @@ def on_message(client, userdata, msg):
 
         #Importante hacer manejo de excepciones en getattr. Cuando se escribe, se genera un fichero ".goutputstream", y sin embargo se llama al getattr antes que al create
         try :
-            file_attr_struct = os.stat(SERVER_PATH + file_path)  # lstat devuelve información sobre el enlace simbólico mismo, no el archivo o directorio al que apunta
+            file_attr_struct = os.lstat(SERVER_PATH + file_path)  # lstat devuelve información sobre el enlace simbólico mismo, no el archivo o directorio al que apunta
             file_attr_dict = {}
 
             for k in ('st_atime', 'st_ctime', 'st_gid', 'st_mode', 'st_mtime', 'st_nlink', 'st_size', 'st_uid'): #TODO: citar esto ?? (copiado de internet)
@@ -214,6 +213,22 @@ def on_message(client, userdata, msg):
             client.publish(ACCESS_TOPIC, json.dumps(access_bool), qos=1)
         except OSError as e:
             client.publish(ACCESS_TOPIC, json.dumps(e.errno), qos=1)
+
+    if topic[-1] == "symlink":
+        json_symlink = msg.payload.decode()
+        symlink_data = json.loads(json_symlink)
+        #El source aparece sin el path relativo, por eso el "/"
+        os_func(client, SYMLINK_TOPIC, os.symlink, SERVER_PATH + "/" + symlink_data["source"], SERVER_PATH + symlink_data["target"])
+
+    if topic[-1] == "link":
+        json_link = msg.payload.decode()
+        link_data = json.loads(json_link)
+        os_func(client, LINK_TOPIC, os.link, SERVER_PATH + link_data["source"], SERVER_PATH + link_data["target"])
+
+    if topic[-1] == "readlink":
+        path = msg.payload.decode()
+        os_func(client, READLINK_TOPIC, os.readlink, SERVER_PATH + path)
+
 
 
 

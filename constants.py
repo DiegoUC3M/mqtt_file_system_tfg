@@ -13,9 +13,6 @@ REQUEST_GETATTR_TOPIC = "/topic/request/getattr"
 OPEN_TOPIC = "/topic/open"
 REQUEST_OPEN_TOPIC = "/topic/request/open"
 
-FTRUNCATE_TOPIC = "/topic/ftruncate"
-REQUEST_FTRUNCATE_TOPIC = "/topic/request/ftruncate"
-
 CREATE_TOPIC = "/topic/create"
 REQUEST_CREATE_TOPIC = "/topic/request/create"
 
@@ -45,3 +42,6 @@ REQUEST_RMDIR_TOPIC = "/topic/request/rmdir"
 
 TRUNCATE_TOPIC = "/topic/truncate"
 REQUEST_TRUNCATE_TOPIC = "/topic/request/truncate"
+
+ACCESS_TOPIC = "/topic/access"
+REQUEST_ACCESS_TOPIC = "/topic/request/access"

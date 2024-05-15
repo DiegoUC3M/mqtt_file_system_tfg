@@ -9,8 +9,26 @@ from functools import partial
 
 SERVER_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_servidor"
 
+#TODO:
+# opendir, releasedir
+# symlink
+# link
+# readlink --> leer enlaces simbolicos. readlink /mnt/fuse/symlink --------- Usa os.readlink(path) para obtener la ruta de destino del enlace simbólico.
 
 
+
+# Descartados
+# mknod (crear i-nodos, tuberias fifo, etc)
+# ioctl
+# init. Inicializar fuse --> Use it instead of __init__ if you start threads on initialization.
+
+# Duda
+# utimens. Con stat parece que hay implementacion por defecto, menos para la fecha de creacion
+# destroy. Sirve para desmontar el sistema de archivos, entiendo que esta implementado por defecto
+# statfs. No tiene implementacion por defecto, aunque no muestra error. se puede comprobar con --> df -h \. ------------- PUEDE SER INTERESANTE IMPLEMENTARLA
+        #muestra estadisticas del sistema de ficheros montados (espacio total, espacio libre, etc)
+# getxattr, listxattr, removexattr, setxattr --> kernel llama a getxattr para capabilities/selinux, pero se lanza una excepcion y continua la ejecucion. Es llamado por ejemplo
+                                                                                                                                                    #despues de un ls -lah
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         print("Se ha conectado al broker con exito\n")
@@ -19,7 +37,6 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(REQUEST_READ_DIR_TOPIC)
         client.subscribe(REQUEST_GETATTR_TOPIC)
         client.subscribe(REQUEST_OPEN_TOPIC)
-        client.subscribe(REQUEST_FTRUNCATE_TOPIC)
         client.subscribe(REQUEST_CREATE_TOPIC)
         client.subscribe(REQUEST_RENAME_TOPIC)
         client.subscribe(REQUEST_UNLINK_TOPIC)
@@ -30,9 +47,11 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(REQUEST_MKDIR_TOPIC)
         client.subscribe(REQUEST_RMDIR_TOPIC)
         client.subscribe(REQUEST_TRUNCATE_TOPIC)
+        client.subscribe(REQUEST_ACCESS_TOPIC)
     else:
         print("Error al intentar conectase al broker")
 
+#TODO: organizar mejor las funciones, darles un orden
 
 def os_func(client, topic, func, *args):
 
@@ -42,7 +61,7 @@ def os_func(client, topic, func, *args):
         if os_result != None:
             os_result_json = json.dumps({"os_result": os_result})
             client.publish(topic, os_result_json, qos=1)
-        #Si la funcion de la libreria os no funciona nada, se manda un 0 para manejo de excepciones:
+        #Si la funcion de la libreria os no retorna nada, se manda un 0 para manejo de excepciones:
         else:
             client.publish(topic, "0", qos=1)
     except OSError as e:
@@ -73,14 +92,6 @@ def on_message(client, userdata, msg):
         except OSError as e:
             err_code = json.dumps(e.errno)
             client.publish(WRITE_TOPIC, err_code, qos=1)
-
-
-
-    if topic[-1] == "ftruncate":
-        json_ftruncate = msg.payload.decode()
-        ftruncate_data = json.loads(json_ftruncate)
-
-        os_func(client, FTRUNCATE_TOPIC, os.ftruncate, ftruncate_data["fh"], ftruncate_data["length"])
 
 
     if topic[-1] == "truncate":
@@ -193,6 +204,19 @@ def on_message(client, userdata, msg):
     if topic[-1] == "rmdir":
         path = msg.payload.decode()
         os_func(client, RMDIR_TOPIC, os.rmdir, SERVER_PATH + path)
+
+    if topic[-1] == "access":
+        json_access = msg.payload.decode()
+        access_data = json.loads(json_access)
+
+        try:
+            access_bool = os.access(SERVER_PATH + access_data["path"], access_data["mode"])
+            client.publish(ACCESS_TOPIC, json.dumps(access_bool), qos=1)
+        except OSError as e:
+            client.publish(ACCESS_TOPIC, json.dumps(e.errno), qos=1)
+
+
+
 
 
 

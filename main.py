@@ -8,6 +8,7 @@ from constants import *
 from functools import partial
 
 from os import O_RDONLY, O_DIRECTORY
+import errno
 
 CLIENT_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_cliente"
 
@@ -104,6 +105,9 @@ class MqttFS(Operations):
 
     def getattr(self, path, fh=None):
 
+        if path in ["/.xdg-volume-info", "/autorun.inf", "/.hidden", "/.Trash"]:
+            raise FuseOSError(errno.ENOENT)
+
         self.client.publish(REQUEST_GETATTR_TOPIC, path, qos=1)
 
         response = sync("getattr", self.pending_requests)
@@ -113,6 +117,7 @@ class MqttFS(Operations):
             return list_stat
         else:
             raise FuseOSError(list_stat)
+
 
     def open(self, path, flags):
         open_data = {"path": path, "flags": flags}
@@ -224,6 +229,7 @@ class MqttFS(Operations):
             raise (FuseOSError(access_value))
 
     def opendir(self, path):
+
         #O_DIRECTORY comprueba que se esta abriendo directorio
         return self.open(path, O_RDONLY | O_DIRECTORY)
 
@@ -278,4 +284,5 @@ if __name__ == "__main__":
     #TODO: borrar estas lineas para ejecutar comandos en bash
     #subprocess.run(['rmdir', CLIENT_PATH], capture_output=False, text=True)
     #subprocess.run(['mkdir', CLIENT_PATH], capture_output=False, text=True)
+
     fuse = FUSE(MqttFS(), CLIENT_PATH, foreground=True, nothreads=True, debug=True)

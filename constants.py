@@ -54,3 +54,5 @@ REQUEST_LINK_TOPIC = "/topic/request/link"
 
 READLINK_TOPIC = "/topic/readlink"
 REQUEST_READLINK_TOPIC = "/topic/request/readlink"
+
+LOGGING_FS_TOPIC = "/topic/logging/filesystem"

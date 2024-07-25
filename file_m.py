@@ -50,21 +50,42 @@ def on_connect(client, userdata, flags, rc):
 
 def os_func(client, topic, func, *args):
 
+    os_result = None
+
     try:
         os_result = func(*args)
 
         if os_result != None:
-            os_result_json = json.dumps({"os_result": os_result})
-            client.publish(topic, os_result_json, qos=1)
-        #Si la funcion de la libreria os no retorna nada, se manda un 0 para manejo de excepciones:
+            os_result = json.dumps({"os_result": os_result})
+        # Si la funcion de la libreria 'os' no retorna nada, se manda un 0 para manejo de excepciones:
         else:
-            client.publish(topic, "0", qos=1)
+            os_result = "0"
     except OSError as e:
-        err_code = json.dumps(e.errno)
-        client.publish(topic, err_code, qos=1)
+        os_result = json.dumps(e.errno)
+
+    finally:
+
+        client.publish(topic, os_result, qos=1)
+
+
+        #Cliente MQTT Logging:
+        if len(args)==1:
+            args = args[0] #para no dejar tuplas con una posicion vacia. Pe: al hacer close este valor era (file_descriptor, )
+        info_logging = {"topic": topic, "func": func.__name__, "args": args}
+
+        #Cuando os_result es directamente un diccionario
+        try:
+            info_logging.update(os_result)
+        except ValueError:
+            #cuando os_result es 0 o codigo de error:
+            info_logging["os_result"] = os_result
+
+        client.publish(LOGGING_FS_TOPIC, json.dumps(info_logging), qos=2)
+
 
 #TODO: organizar mejor las funciones, darles un orden
 #TODO: mejorar los tiempos. Sobre todo al principio de la ejecucion del programa que busca archivos que no necesita. Tambien sospecho que puede ser por una papelera muy grande --> Trash-1000
+
 
 
 def on_message(client, userdata, msg):
@@ -82,15 +103,18 @@ def on_message(client, userdata, msg):
         json_data = msg.payload.decode()
         dict_data = json.loads(json_data)
         fh = dict_data["file_handle"]
-
         write_data = base64.b64decode(dict_data["text"])
 
         try:
-            num_bytes_written = os.write(fh, write_data)
-            client.publish(WRITE_TOPIC, json.dumps({"num_bytes_written": num_bytes_written}), qos=1)
+            os_result = os.write(fh, write_data)
+            client.publish(WRITE_TOPIC, json.dumps({"num_bytes_written": os_result}), qos=1)
         except OSError as e:
-            err_code = json.dumps(e.errno)
-            client.publish(WRITE_TOPIC, err_code, qos=1)
+            os_result = json.dumps(e.errno)
+            client.publish(WRITE_TOPIC, os_result, qos=1)
+
+        finally:
+            info_logging = {"topic": WRITE_TOPIC, "func": "write", "args": (fh,dict_data["text"]), "os_result": json.dumps({"os_result": os_result})}
+            client.publish(LOGGING_FS_TOPIC, json.dumps(info_logging), qos=2)
 
 
     if topic[-1] == "truncate":
@@ -114,16 +138,20 @@ def on_message(client, userdata, msg):
         try:
             datos_leidos = os.read(read_data["fh"], read_data["size"])
 
-            #Mandamos la informaicon codificada en base64 para aquellos ficheros que no tienen codifcacion ascii (los ficheros .swp por ejemplo)
-            datos_b64 = base64.b64encode(datos_leidos).decode()
-            json_read = json.dumps({"datos_b64": datos_b64})
+            #Mandamos la informacion codificada en base64 para aquellos ficheros que no tienen codifcacion ascii (los ficheros .swp por ejemplo)
+            os_result = base64.b64encode(datos_leidos).decode()
+            json_read = json.dumps({"datos_b64": os_result})
 
             # Publicamos los datos para que los reciba el cliente que ha solicitado la lectura:
             client.publish(READ_TOPIC, json_read, qos=2)
 
         except OSError as e:
-            err_code = json.dumps(e.errno)
-            client.publish(READ_TOPIC, err_code, qos=1)
+            os_result = json.dumps(e.errno)
+            client.publish(READ_TOPIC, os_result, qos=1)
+
+        finally:
+            info_logging = {"topic": READ_TOPIC, "func": "read", "args": (read_data["fh"], read_data["size"]), "os_result": json.dumps({"os_result": os_result})}
+            client.publish(LOGGING_FS_TOPIC, json.dumps(info_logging), qos=2)
 
 
     if topic[-1] == "readDir":
@@ -134,11 +162,15 @@ def on_message(client, userdata, msg):
         try:
             files = os.listdir(SERVER_PATH + file_path)
             parentPath.extend(files)
-            files_json = json.dumps(parentPath)
-            client.publish(READDIR_TOPIC, files_json, qos=1)
+            os_result = json.dumps(parentPath)
+            client.publish(READDIR_TOPIC, os_result, qos=1)
         except OSError as e:
-            err_code = json.dumps(e.errno)
-            client.publish(READDIR_TOPIC, err_code, qos=1)
+            os_result = json.dumps(e.errno)
+            client.publish(READDIR_TOPIC, os_result, qos=1)
+
+        finally:
+            info_logging = {"topic": READDIR_TOPIC, "func": "listdir", "args": SERVER_PATH + file_path, "os_result": os_result}
+            client.publish(LOGGING_FS_TOPIC, json.dumps(info_logging), qos=2)
 
 
     if topic[-1] == "getattr":
@@ -149,16 +181,20 @@ def on_message(client, userdata, msg):
             file_attr_struct = os.lstat(SERVER_PATH + file_path)  # lstat devuelve información sobre el enlace simbólico mismo, no el archivo o directorio al que apunta
             file_attr_dict = {}
 
-            for k in ('st_atime', 'st_ctime', 'st_gid', 'st_mode', 'st_mtime', 'st_nlink', 'st_size', 'st_uid'): #TODO: citar esto ?? (copiado de internet)
+            for k in ('st_atime', 'st_ctime', 'st_gid', 'st_mode', 'st_mtime', 'st_nlink', 'st_size', 'st_uid'):
                 file_attr_dict[k] = getattr(file_attr_struct, k)
 
-            files_attr_json = json.dumps(file_attr_dict)
-            client.publish(GETATTR_TOPIC, files_attr_json, qos=1)
+            os_result = json.dumps(file_attr_dict)
+            client.publish(GETATTR_TOPIC, os_result, qos=1)
 
         except OSError as e:
             #no se manda el error porque    -->    TypeError: Object of type type is not JSON serializable
-            err_code = json.dumps(e.errno)
-            client.publish(GETATTR_TOPIC, err_code, qos=1)
+            os_result = json.dumps(e.errno)
+            client.publish(GETATTR_TOPIC, os_result, qos=1)
+
+        finally:
+            info_logging = {"topic": GETATTR_TOPIC, "func": "lstat", "args": SERVER_PATH + file_path, "os_result": os_result}
+            client.publish(LOGGING_FS_TOPIC, json.dumps(info_logging), qos=2)
 
 
     if topic[-1] == "rename":
@@ -204,15 +240,22 @@ def on_message(client, userdata, msg):
         path = msg.payload.decode()
         os_func(client, RMDIR_TOPIC, os.rmdir, SERVER_PATH + path)
 
+
     if topic[-1] == "access":
         json_access = msg.payload.decode()
         access_data = json.loads(json_access)
 
         try:
-            access_bool = os.access(SERVER_PATH + access_data["path"], access_data["mode"])
-            client.publish(ACCESS_TOPIC, json.dumps(access_bool), qos=1)
+            os_result = os.access(SERVER_PATH + access_data["path"], access_data["mode"])
+            client.publish(ACCESS_TOPIC, json.dumps(os_result), qos=1)
         except OSError as e:
-            client.publish(ACCESS_TOPIC, json.dumps(e.errno), qos=1)
+            os_result = e.errno
+            client.publish(ACCESS_TOPIC, json.dumps(os_result), qos=1)
+
+        finally:
+            info_logging = {"topic": ACCESS_TOPIC, "func": "access", "args": (SERVER_PATH + access_data["path"], access_data["mode"]), "os_result": json.dumps({"os_result": os_result})}
+            client.publish(LOGGING_FS_TOPIC, json.dumps(info_logging), qos=2)
+
 
     if topic[-1] == "symlink":
         json_symlink = msg.payload.decode()
@@ -228,12 +271,6 @@ def on_message(client, userdata, msg):
     if topic[-1] == "readlink":
         path = msg.payload.decode()
         os_func(client, READLINK_TOPIC, os.readlink, SERVER_PATH + path)
-
-
-
-
-
-
 
 def main():
     subprocess.run(['gnome-terminal', '--', 'bash', '-c', 'mosquitto', '-v'], capture_output=True, text=True)

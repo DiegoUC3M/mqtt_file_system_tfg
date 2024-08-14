@@ -28,9 +28,6 @@ REQUEST_FLUSH_FSYNC_TOPIC = "/topic/request/flush_fsync"
 RELEASE_TOPIC = "/topic/release"
 REQUEST_RELEASE_TOPIC = "/topic/request/release"
 
-CHOWN_TOPIC = "/topic/chown"
-REQUEST_CHOWN_TOPIC = "/topic/request/chown"
-
 CHMOD_TOPIC = "/topic/chmod"
 REQUEST_CHMOD_TOPIC = "/topic/request/chmod"
 

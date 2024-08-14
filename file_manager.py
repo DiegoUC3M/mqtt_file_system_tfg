@@ -1,30 +1,18 @@
-import errno
+import sys
 import os
 import paho.mqtt.client as mqtt
 import json
-import subprocess #para el comando de mosquitto
 import base64
 from constants import *
-from functools import partial
+from config import *
 
-SERVER_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_servidor"
+SERVER_PATH = ""
 
 
-# Descartados
-# mknod (crear i-nodos, tuberias fifo, etc)
-# ioctl
-# init. Inicializar fuse --> Use it instead of __init__ if you start threads on initialization.
 
-# Duda
-# utimens. Con stat parece que hay implementacion por defecto, menos para la fecha de creacion
-# destroy. Sirve para desmontar el sistema de archivos, entiendo que esta implementado por defecto
-# statfs. No tiene implementacion por defecto, aunque no muestra error. se puede comprobar con --> df -h \. ------------- PUEDE SER INTERESANTE IMPLEMENTARLA
-        #muestra estadisticas del sistema de ficheros montados (espacio total, espacio libre, etc)
-# getxattr, listxattr, removexattr, setxattr --> kernel llama a getxattr para capabilities/selinux, pero se lanza una excepcion y continua la ejecucion. Es llamado por ejemplo
-                                                                                                                                                    #despues de un ls -lah
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
-        print("Se ha conectado al broker con exito\n")
+        print("Se ha conectado al broker con exito")
         client.subscribe(REQUEST_WRITE_TOPIC)
         client.subscribe(REQUEST_READ_TOPIC)
         client.subscribe(REQUEST_READ_DIR_TOPIC)
@@ -35,7 +23,6 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(REQUEST_UNLINK_TOPIC)
         client.subscribe(REQUEST_FLUSH_FSYNC_TOPIC)
         client.subscribe(REQUEST_RELEASE_TOPIC)
-        client.subscribe(REQUEST_CHOWN_TOPIC)
         client.subscribe(REQUEST_CHMOD_TOPIC)
         client.subscribe(REQUEST_MKDIR_TOPIC)
         client.subscribe(REQUEST_RMDIR_TOPIC)
@@ -81,12 +68,6 @@ def os_func(client, topic, func, *args):
             info_logging["os_result"] = os_result
 
         client.publish(LOGGING_FS_TOPIC, json.dumps(info_logging), qos=2)
-
-
-#TODO: organizar mejor las funciones, darles un orden
-#TODO: mejorar los tiempos. Sobre todo al principio de la ejecucion del programa que busca archivos que no necesita. Tambien sospecho que puede ser por una papelera muy grande --> Trash-1000
-
-
 
 def on_message(client, userdata, msg):
     topic = msg.topic.split('/')
@@ -188,7 +169,6 @@ def on_message(client, userdata, msg):
             client.publish(GETATTR_TOPIC, os_result, qos=1)
 
         except OSError as e:
-            #no se manda el error porque    -->    TypeError: Object of type type is not JSON serializable
             os_result = json.dumps(e.errno)
             client.publish(GETATTR_TOPIC, os_result, qos=1)
 
@@ -218,13 +198,6 @@ def on_message(client, userdata, msg):
 
         fh = msg.payload.decode()
         os_func(client, RELEASE_TOPIC, os.close, int(fh))
-
-    if topic[-1] == "chown":
-        json_chown = msg.payload.decode()
-        chown_data = json.loads(json_chown)
-        os_func(client, CHOWN_TOPIC, os.chown, SERVER_PATH + chown_data["path"], chown_data["uid"], chown_data["gid"])
-
-
 
     if topic[-1] == "chmod":
         json_chmod = msg.payload.decode()
@@ -273,12 +246,23 @@ def on_message(client, userdata, msg):
         os_func(client, READLINK_TOPIC, os.readlink, SERVER_PATH + path)
 
 def main():
-    subprocess.run(['gnome-terminal', '--', 'bash', '-c', 'mosquitto', '-v'], capture_output=True, text=True)
-    #subprocess.Popen(['xfce4-terminal', '-e', 'bash -c "mosquitto -v"'])
+
+    global SERVER_PATH
+
+    # EL SEGUNDO ARGUMENTO NO ES NECESARIO SI SE DECIDE INTRODUCIRLO COMO VARIABLE GLOBAL DENTRO DE ESTE FICHERO
+    if len(sys.argv) > 2:
+        print("Solo se aceptan 1 o 2 argumentos, el nombre del script y el path absoluto donde se va montar el sistema de ficheros")
+        sys.exit(1)
+
+    if len(sys.argv) == 2:
+        SERVER_PATH = sys.argv[1]
+
     client = mqtt.Client(client_id="file_manager")
+    # Se puede comentar/borrar la siguiente linea si se permiten conexiones anonimas
+    client.username_pw_set(username=MQTT_BROKER_USER, password=MQTT_BROKER_PASSWORD)
     client.on_connect = on_connect
     client.on_message = on_message
-    client.connect("localhost", 1883, 60)
+    client.connect(MQTT_BROKER_HOST, MQTT_BROKER_PORT, MQTT_BROKER_KEEPALIVE)
     client.loop_forever()
 
 

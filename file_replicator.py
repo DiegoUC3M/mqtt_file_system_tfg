@@ -1,17 +1,16 @@
-import errno
 import os
 import paho.mqtt.client as mqtt
 import json
-import subprocess #para el comando de mosquitto
 import base64
+import sys
 from constants import *
-from functools import partial
+from config import *
 
-SERVER_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_replicacion"
+SERVER_PATH = ""
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
-        print("Se ha conectado al broker con exito\n")
+        print("Se ha conectado al broker con exito")
         client.subscribe(REQUEST_WRITE_TOPIC)
         client.subscribe(REQUEST_OPEN_TOPIC)
         client.subscribe(REQUEST_CREATE_TOPIC)
@@ -113,16 +112,27 @@ def on_message(client, userdata, msg):
             os.link(SERVER_PATH + link_data["source"], SERVER_PATH + link_data["target"])
 
     except OSError as e:
-        pass
-        print("Ha pasado por aqui")
         print(e)
 
 
 def main():
+
+    global SERVER_PATH
+
+    # EL SEGUNDO ARGUMENTO NO ES NECESARIO SI SE DECIDE INTRODUCIRLO COMO VARIABLE GLOBAL DENTRO DE ESTE FICHERO
+    if len(sys.argv) > 2:
+        print("Solo se aceptan 1 o 2 argumentos, el nombre del script y el path absoluto donde se va montar el sistema de ficheros")
+        sys.exit(1)
+
+    if len(sys.argv) == 2:
+        SERVER_PATH = sys.argv[1]
+
     client = mqtt.Client(client_id="file_repl")
+    # Se puede comentar/borrar la siguiente linea si se permiten conexiones anonimas
+    client.username_pw_set(username=MQTT_BROKER_USER, password=MQTT_BROKER_PASSWORD)
     client.on_connect = on_connect
     client.on_message = on_message
-    client.connect("localhost", 1883, 60)
+    client.connect(MQTT_BROKER_HOST, MQTT_BROKER_PORT, MQTT_BROKER_KEEPALIVE)
     client.loop_forever()
 
 

@@ -2787,3 +2787,37 @@ INFO - 2024-07-25 11:55:28 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/
 INFO - 2024-07-25 11:55:28 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (133 bytes)
 INFO - 2024-07-25 11:55:29 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (323 bytes)
 INFO - 2024-07-25 11:55:40 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (323 bytes)
+INFO - 2024-08-14 09:39:11 - Sending CONNECT (u1, p1, wr0, wq0, wf0, c1, k60) client_id=b'logger'
+INFO - 2024-08-14 09:39:11 - Received CONNACK (0, 0)
+INFO - 2024-08-14 09:39:11 - Sending SUBSCRIBE (d0, m1) [(b'/topic/logging/filesystem', 0)]
+INFO - 2024-08-14 09:39:11 - Received SUBACK
+INFO - 2024-08-14 09:39:56 - Sending CONNECT (u1, p1, wr0, wq0, wf0, c1, k60) client_id=b'logger'
+INFO - 2024-08-14 09:39:56 - Received CONNACK (0, 0)
+INFO - 2024-08-14 09:39:56 - Sending SUBSCRIBE (d0, m1) [(b'/topic/logging/filesystem', 0)]
+INFO - 2024-08-14 09:39:56 - Received SUBACK
+INFO - 2024-08-14 09:39:57 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (316 bytes)
+INFO - 2024-08-14 09:39:57 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (150 bytes)
+INFO - 2024-08-14 09:39:57 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (73 bytes)
+INFO - 2024-08-14 09:39:57 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (146 bytes)
+INFO - 2024-08-14 09:39:57 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (316 bytes)
+INFO - 2024-08-14 09:39:57 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (150 bytes)
+INFO - 2024-08-14 09:39:57 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (73 bytes)
+INFO - 2024-08-14 09:39:57 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (146 bytes)
+INFO - 2024-08-14 09:39:57 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (316 bytes)
+INFO - 2024-08-14 09:39:57 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (150 bytes)
+INFO - 2024-08-14 09:39:57 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (318 bytes)
+INFO - 2024-08-14 09:39:58 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (73 bytes)
+INFO - 2024-08-14 09:39:58 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (146 bytes)
+INFO - 2024-08-14 09:39:58 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (316 bytes)
+INFO - 2024-08-14 09:39:58 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (150 bytes)
+INFO - 2024-08-14 09:39:58 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (73 bytes)
+INFO - 2024-08-14 09:39:58 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (146 bytes)
+INFO - 2024-08-14 09:39:58 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (316 bytes)
+INFO - 2024-08-14 09:39:58 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (150 bytes)
+INFO - 2024-08-14 09:39:58 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (73 bytes)
+INFO - 2024-08-14 09:39:59 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (146 bytes)
+INFO - 2024-08-14 09:39:59 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (316 bytes)
+INFO - 2024-08-14 09:39:59 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (150 bytes)
+INFO - 2024-08-14 09:39:59 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (318 bytes)
+INFO - 2024-08-14 09:39:59 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (73 bytes)
+INFO - 2024-08-14 09:39:59 - Received PUBLISH (d0, q0, r0, m0), '/topic/logging/filesystem', ...  (146 bytes)

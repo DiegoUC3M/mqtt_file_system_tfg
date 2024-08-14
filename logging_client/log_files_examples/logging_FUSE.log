@@ -983,3 +983,55 @@ INFO - 2024-07-25 11:55:29 - La operacion getattr ha tenido exito
 DEBUG - 2024-07-25 11:55:29 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901314.6020234, 'st_ctime': 1721901328.982245, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901328.982245, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
 INFO - 2024-07-25 11:55:40 - La operacion getattr ha tenido exito
 DEBUG - 2024-07-25 11:55:40 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901329.7502568, 'st_ctime': 1721901328.982245, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901328.982245, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: {'st_atime': 1723619810.433897, 'st_ctime': 1723619804.2060442, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1723619804.2060442, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:57 - La operacion readDir ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/readDir - func : listdir - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: ['.', '..', 'hola']
+INFO - 2024-08-14 09:39:57 - La operacion release ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/release - func : close - args : 4
+INFO - 2024-08-14 09:39:57 - La operacion open ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/open - func : open - args : ['/home/diego/Escritorio/directorio_servidor_prueba/', 65536] - os_result: 4
+INFO - 2024-08-14 09:39:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: {'st_atime': 1723619810.433897, 'st_ctime': 1723619804.2060442, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1723619804.2060442, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:57 - La operacion readDir ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/readDir - func : listdir - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: ['.', '..', 'hola']
+INFO - 2024-08-14 09:39:57 - La operacion release ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/release - func : close - args : 4
+INFO - 2024-08-14 09:39:57 - La operacion open ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/open - func : open - args : ['/home/diego/Escritorio/directorio_servidor_prueba/', 65536] - os_result: 4
+INFO - 2024-08-14 09:39:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: {'st_atime': 1723619810.433897, 'st_ctime': 1723619804.2060442, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1723619804.2060442, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:57 - La operacion readDir ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/readDir - func : listdir - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: ['.', '..', 'hola']
+INFO - 2024-08-14 09:39:58 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/hola - os_result: {'st_atime': 1723618534.0328698, 'st_ctime': 1723618548.5298803, 'st_gid': 1000, 'st_mode': 33056, 'st_mtime': 1723618534.0328698, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:58 - La operacion release ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/release - func : close - args : 4
+INFO - 2024-08-14 09:39:58 - La operacion open ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/open - func : open - args : ['/home/diego/Escritorio/directorio_servidor_prueba/', 65536] - os_result: 4
+INFO - 2024-08-14 09:39:58 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: {'st_atime': 1723619810.433897, 'st_ctime': 1723619804.2060442, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1723619804.2060442, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:58 - La operacion readDir ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/readDir - func : listdir - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: ['.', '..', 'hola']
+INFO - 2024-08-14 09:39:58 - La operacion release ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/release - func : close - args : 4
+INFO - 2024-08-14 09:39:58 - La operacion open ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/open - func : open - args : ['/home/diego/Escritorio/directorio_servidor_prueba/', 65536] - os_result: 4
+INFO - 2024-08-14 09:39:58 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: {'st_atime': 1723619810.433897, 'st_ctime': 1723619804.2060442, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1723619804.2060442, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:58 - La operacion readDir ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/readDir - func : listdir - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: ['.', '..', 'hola']
+INFO - 2024-08-14 09:39:58 - La operacion release ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/release - func : close - args : 4
+INFO - 2024-08-14 09:39:59 - La operacion open ha tenido exito
+DEBUG - 2024-08-14 09:39:59 - topic : /topic/open - func : open - args : ['/home/diego/Escritorio/directorio_servidor_prueba/', 65536] - os_result: 4
+INFO - 2024-08-14 09:39:59 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:59 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: {'st_atime': 1723619810.433897, 'st_ctime': 1723619804.2060442, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1723619804.2060442, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:59 - La operacion readDir ha tenido exito
+DEBUG - 2024-08-14 09:39:59 - topic : /topic/readDir - func : listdir - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: ['.', '..', 'hola']
+INFO - 2024-08-14 09:39:59 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:59 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/hola - os_result: {'st_atime': 1723618534.0328698, 'st_ctime': 1723618548.5298803, 'st_gid': 1000, 'st_mode': 33056, 'st_mtime': 1723618534.0328698, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:59 - La operacion release ha tenido exito
+DEBUG - 2024-08-14 09:39:59 - topic : /topic/release - func : close - args : 4
+INFO - 2024-08-14 09:39:59 - La operacion open ha tenido exito
+DEBUG - 2024-08-14 09:39:59 - topic : /topic/open - func : open - args : ['/home/diego/Escritorio/directorio_servidor_prueba/', 65536] - os_result: 4

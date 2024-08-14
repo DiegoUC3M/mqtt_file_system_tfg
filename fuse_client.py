@@ -1,21 +1,22 @@
+import sys
 import paho.mqtt.client as mqtt
 import json
 import time
-from fuse import FUSE, FuseOSError, Operations
-import subprocess  #para el comando de fusermount
+from fuse import FUSE, FuseOSError, Operations, fuse_exit
 import base64
 from constants import *
+from config import *
 from functools import partial
-
+from signal import signal, SIGINT
 from os import O_RDONLY, O_DIRECTORY
 import errno
 
-CLIENT_PATH = "/home/diego/PycharmProjects/mqtt_test/directorio_cliente"
+CLIENT_PATH = ""
 
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
-        print("Se ha conectado al broker con exito\n")
+        print("Se ha conectado al broker con exito")
         client.subscribe(READ_TOPIC)  # Para recibir los datos de vuelta
         client.subscribe(READDIR_TOPIC)
         client.subscribe(GETATTR_TOPIC)
@@ -26,7 +27,6 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(UNLINK_TOPIC)
         client.subscribe(FLUSH_FSYNC_TOPIC)
         client.subscribe(RELEASE_TOPIC)
-        client.subscribe(CHOWN_TOPIC)
         client.subscribe(CHMOD_TOPIC)
         client.subscribe(MKDIR_TOPIC)
         client.subscribe(RMDIR_TOPIC)
@@ -39,14 +39,8 @@ def on_connect(client, userdata, flags, rc):
         print("Error al intentar conectase al broker")
 
 
-def on_publish(client, userdata, mid):
-    #print(f"El mensaje se ha publicado con exito. MESSAGE_ID: {mid}")
-    pass
-
-
 def on_message(client, userdata, msg):
     topic = msg.topic.split('/')
-
     userdata[topic[-1]] = msg.payload.decode()
 
 
@@ -56,7 +50,6 @@ def sync(op, pending_requests):
     return pending_requests.pop(op)
 
 
-#De momento para pobar:
 def response_handler(op, key, pending_requests):
     response = sync(op, pending_requests)
     response_loaded = json.loads(response)
@@ -87,11 +80,14 @@ class MqttFS(Operations):
         # Para manejar la asincronia:
         self.pending_requests = {}
 
-        self.client = mqtt.Client(client_id="main", userdata=self.pending_requests)
+        self.client = mqtt.Client(client_id="fuse_client", userdata=self.pending_requests)
+
+        #Se puede comentar/borrar la siguiente linea si se permiten conexiones anonimas
+        self.client.username_pw_set(username=MQTT_BROKER_USER, password=MQTT_BROKER_PASSWORD)
+
         self.client.on_connect = on_connect
         self.client.on_message = on_message
-        self.client.on_publish = on_publish
-        self.client.connect("localhost", 1883, 60)
+        self.client.connect(MQTT_BROKER_HOST, MQTT_BROKER_PORT, MQTT_BROKER_KEEPALIVE)
 
         self.no_response_handler = partial(no_response_handler, client=self.client,
                                            pending_requests=self.pending_requests)
@@ -180,7 +176,7 @@ class MqttFS(Operations):
 
     # Para realizar tareas de limpieza asociadas con el cierre del archivo
     def flush(self, path, fh):
-        #lo implemento comom fsync al no existir implementacion de flush con "os"
+        #lo implemento como fsync al no existir implementacion de flush con "os"
         self.no_response_handler(fh, REQUEST_FLUSH_FSYNC_TOPIC, "flush_fsync")
 
     # Para forzar la escritura de todos los cambios pendientes del archivo
@@ -211,8 +207,7 @@ class MqttFS(Operations):
 
         self.no_response_handler(path, REQUEST_RMDIR_TOPIC, "rmdir")
 
-    #Verifica los permisos antes de ejecutar una funcion del so, pero esas funciones también fallan en el momento
-    # de ser ejecutadas, esto solo añade un paso extra.
+    #Verifica los permisos antes de ejecutar una operacion del sistema de ficheros
     def access(self, path, mode):
         access_data = {"path": path, "mode": mode}
         json_access = json.dumps(access_data)
@@ -257,32 +252,25 @@ class MqttFS(Operations):
 
 
 
-    '''
-    #TODO: comprobar si no funciona al estar el directorio montado en mi espacio de usuario, y por ese motivo otro usuario
-    #TODO: no puede acceder, al no tener permisos de r-x para mi directorio home
-    def chown(self, path, uid, gid):
-        chown_data = {"path": path, "uid": uid, "gid": gid}
-        json_chown = json.dumps(chown_data)
-
-        self.client.publish(REQUEST_CHOWN_TOPIC, json_chown, qos=1)
-
-        response = sync("chown", self.pending_requests)
-
-        if response == "0":
-            return None
-        else:
-           raise FuseOSError(int(response))
-    '''
+#Esta funcion permite desmontar de una forma limpia el sistema de ficheros cuando se interrumpe el programa desde la terminal.
+def unmount():
+    fuse_exit()
 
 
+def main():
+    global CLIENT_PATH
+
+    #EL SEGUNDO ARGUMENTO NO ES NECESARIO SI SE DECIDE INTRODUCIRLO COMO VARIABLE GLOBAL DENTRO DE ESTE FICHERO
+    if len(sys.argv) > 2:
+        print("Solo se aceptan 1 o 2 argumentos, el nombre del script y el path absoluto donde se va montar el sistema de ficheros")
+        sys.exit(1)
 
 
+    if len(sys.argv) == 2:
+        CLIENT_PATH = sys.argv[1]
+
+    signal(SIGINT, unmount)
+    FUSE(MqttFS(), CLIENT_PATH, foreground=True, nothreads=True, debug=True)
 
 if __name__ == "__main__":
-    subprocess.run(['fusermount', '-uz', CLIENT_PATH], capture_output=False,
-                   text=True)  #A veces no se desmonta el volumen aunque detengas el script
-    #TODO: borrar estas lineas para ejecutar comandos en bash
-    #subprocess.run(['rmdir', CLIENT_PATH], capture_output=False, text=True)
-    #subprocess.run(['mkdir', CLIENT_PATH], capture_output=False, text=True)
-
-    fuse = FUSE(MqttFS(), CLIENT_PATH, foreground=True, nothreads=True, debug=True)
+    main()

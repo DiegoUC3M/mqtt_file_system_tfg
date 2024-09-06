@@ -1,0 +1,1037 @@
+INFO - 2024-07-25 10:41:54 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 10:41:54 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 4] - os_result: True
+
+INFO - 2024-07-25 11:53:16 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:16 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 4] - os_result: True
+INFO - 2024-07-25 11:53:17 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:17 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:17 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:17 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:17 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:17 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:17 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:17 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:17 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:17 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:17 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:17 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000/files - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816775.6100833, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816775.6100833, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:17 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:17 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:17 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:17 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000/files', 65536] - os_result: 5
+INFO - 2024-07-25 11:53:17 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:17 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:17 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:17 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000/files - os_result: ['.', '..', 'hola', 'adios']
+INFO - 2024-07-25 11:53:18 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:18 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:18 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:18 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:18 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:18 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000/files/hola - os_result: {'st_atime': 1721816776.5740995, 'st_ctime': 1721816775.6100833, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721757041.5128305, 'st_nlink': 2, 'st_size': 30, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:18 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:18 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:18 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:18 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000/files/adios - os_result: {'st_atime': 1721816776.5740995, 'st_ctime': 1721816775.6100833, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721757041.5128305, 'st_nlink': 2, 'st_size': 30, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:18 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:18 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:18 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:18 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:18 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:18 - topic : /topic/release - func : close - args : 5
+INFO - 2024-07-25 11:53:18 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:18 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:18 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:18 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:19 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:19 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000/info - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816775.2100766, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816775.2100766, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:19 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:19 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000/info/adios.trashinfo - os_result: {'st_atime': 1721816773.1020412, 'st_ctime': 1721816771.894021, 'st_gid': 1000, 'st_mode': 33152, 'st_mtime': 1721816771.4940143, 'st_nlink': 1, 'st_size': 57, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:19 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:19 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:19 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:19 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000/info/adios.trashinfo', 32768] - os_result: 5
+INFO - 2024-07-25 11:53:19 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:19 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:19 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:53:19 - topic : /topic/read - func : read - args : [5, 4096] - os_result: b'[Trash Info]\nPath=adios\nDeletionDate=2024-07-24T12:26:10\n'
+INFO - 2024-07-25 11:53:19 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:19 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:19 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:53:19 - topic : /topic/flush_fsync - func : fsync - args : 5
+INFO - 2024-07-25 11:53:19 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:19 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:19 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:19 - topic : /topic/release - func : close - args : 5
+INFO - 2024-07-25 11:53:20 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:20 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000/info/hola.trashinfo - os_result: {'st_atime': 1721816776.4140968, 'st_ctime': 1721816775.2100766, 'st_gid': 1000, 'st_mode': 33152, 'st_mtime': 1721816774.8060699, 'st_nlink': 1, 'st_size': 56, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:20 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:20 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:20 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:20 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000/info/hola.trashinfo', 32768] - os_result: 5
+INFO - 2024-07-25 11:53:20 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:53:20 - topic : /topic/read - func : read - args : [5, 4096] - os_result: b'[Trash Info]\nPath=hola\nDeletionDate=2024-07-24T12:26:14\n'
+INFO - 2024-07-25 11:53:20 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:20 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:20 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:20 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:20 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:53:20 - topic : /topic/flush_fsync - func : fsync - args : 5
+INFO - 2024-07-25 11:53:20 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:20 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:20 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:20 - topic : /topic/release - func : close - args : 5
+INFO - 2024-07-25 11:53:20 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:20 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:21 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:21 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:21 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:21 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:21 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:21 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:21 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:21 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:21 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:21 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:21 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:21 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:21 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:21 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:21 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:21 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:21 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:21 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:21 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:21 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:22 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:22 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:22 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:22 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:22 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:22 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:22 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:22 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:22 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:22 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:22 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:22 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:22 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:22 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:22 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:22 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:22 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:22 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:22 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:22 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:23 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:23 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:23 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:23 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:23 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:23 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:23 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:23 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:23 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:23 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:23 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:23 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:23 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:23 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:23 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:23 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:23 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:23 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:23 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:23 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:24 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:24 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:24 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:24 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:24 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:24 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:24 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:24 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:24 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:24 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:24 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:24 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:24 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:24 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:24 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:24 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:24 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:24 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:24 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:24 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:25 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:25 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:25 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:25 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:25 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:25 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:25 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:25 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:25 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:25 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:25 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:25 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:25 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:25 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:25 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:25 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:25 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:25 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:26 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:26 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:26 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:26 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:26 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:26 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:26 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:26 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:26 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:26 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:26 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:26 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:26 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:26 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:26 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:26 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:26 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:26 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:26 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:26 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:27 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:27 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:27 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:27 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:27 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:27 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:27 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:27 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:27 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:27 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:27 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:27 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:27 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:27 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:27 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:27 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:27 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:27 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:27 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:27 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:28 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:28 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:28 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:28 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:28 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:28 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:28 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:28 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:28 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:28 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:28 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:28 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:28 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:28 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:28 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:28 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:28 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:28 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:28 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:28 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:29 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:29 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:29 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:29 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:29 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:29 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:29 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:29 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:29 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:29 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:29 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:29 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:29 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:29 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:29 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:29 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:29 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:29 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:29 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:29 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:30 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:30 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:30 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:30 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:30 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:30 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:30 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:30 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:30 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:30 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:30 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:30 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:30 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:30 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:30 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:30 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:30 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:30 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:30 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:30 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:31 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:31 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:31 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:31 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:31 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:31 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:31 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:31 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:31 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:31 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:31 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:31 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:31 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:31 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:31 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:31 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:31 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:31 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:31 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:31 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:32 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:32 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:32 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:32 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:32 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:32 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:32 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:32 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:32 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:32 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:32 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:32 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:32 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:32 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:32 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:32 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:32 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:32 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:32 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:32 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:33 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:33 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:33 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:33 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:33 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:33 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:33 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:33 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:33 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:33 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:33 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:33 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:33 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:33 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:33 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:33 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:33 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:33 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:33 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:33 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:34 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:34 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:34 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:34 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:34 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:34 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:34 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:34 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:34 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:34 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:34 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:34 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:34 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:34 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:34 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:34 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:34 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:34 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:34 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:34 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:35 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:35 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:35 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:35 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:35 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:35 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:35 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:35 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:35 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:35 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:35 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:35 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:35 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:35 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:35 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:35 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:35 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:35 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:35 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:35 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:36 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:36 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:36 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:36 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:36 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:36 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:36 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:36 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:36 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:36 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:36 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:36 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:36 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:36 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:36 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:36 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:36 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:36 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:36 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:36 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:37 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:37 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:37 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:37 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:37 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:37 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:37 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:37 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:37 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:37 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:37 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:37 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:38 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:38 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:39 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:39 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:47 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:47 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:47 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:47 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:47 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:47 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:47 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:47 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:47 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:47 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 2] - os_result: True
+INFO - 2024-07-25 11:53:47 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:47 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:47 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:47 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:47 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:47 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:48 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:48 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 4] - os_result: True
+INFO - 2024-07-25 11:53:48 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:48 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 2] - os_result: False
+INFO - 2024-07-25 11:53:48 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:48 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 1] - os_result: False
+INFO - 2024-07-25 11:53:48 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:48 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:48 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:48 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:48 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:48 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp', 294912] - os_result: 5
+INFO - 2024-07-25 11:53:48 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:53:48 - topic : /topic/read - func : read - args : [5, 4096] - os_result: b'b0nano 6.2\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xf1C\x00\x00diego\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00diego-B450-AORUS-ELITE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00que\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+INFO - 2024-07-25 11:53:48 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:53:48 - topic : /topic/flush_fsync - func : fsync - args : 5
+INFO - 2024-07-25 11:53:48 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:48 - topic : /topic/release - func : close - args : 5
+INFO - 2024-07-25 11:53:48 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:48 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp', 4] - os_result: True
+INFO - 2024-07-25 11:53:49 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:49 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp', 2] - os_result: True
+INFO - 2024-07-25 11:53:49 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:49 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp', 1] - os_result: False
+INFO - 2024-07-25 11:53:49 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:49 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:49 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:49 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 294912] - os_result: 5
+INFO - 2024-07-25 11:53:49 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:53:49 - topic : /topic/read - func : read - args : [5, 4096] - os_result: b'b0nano 6.2\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00qB\x00\x00diego\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00diego-B450-AORUS-ELITE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00hola\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+INFO - 2024-07-25 11:53:49 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:53:49 - topic : /topic/flush_fsync - func : fsync - args : 5
+INFO - 2024-07-25 11:53:49 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:49 - topic : /topic/release - func : close - args : 5
+INFO - 2024-07-25 11:53:49 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:49 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 4] - os_result: True
+INFO - 2024-07-25 11:53:49 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:49 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 2] - os_result: True
+INFO - 2024-07-25 11:53:49 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:49 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 1] - os_result: False
+INFO - 2024-07-25 11:53:50 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:50 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:50 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:50 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000', 4] - os_result: True
+INFO - 2024-07-25 11:53:50 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:50 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000', 2] - os_result: True
+INFO - 2024-07-25 11:53:50 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:50 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000', 1] - os_result: True
+INFO - 2024-07-25 11:53:50 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:50 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:50 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:50 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/j', 294912] - os_result: 5
+INFO - 2024-07-25 11:53:50 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:53:50 - topic : /topic/read - func : read - args : [5, 4096] - os_result: b'hola\n'
+INFO - 2024-07-25 11:53:50 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:53:50 - topic : /topic/flush_fsync - func : fsync - args : 5
+INFO - 2024-07-25 11:53:50 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:50 - topic : /topic/release - func : close - args : 5
+INFO - 2024-07-25 11:53:50 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:50 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/j', 4] - os_result: True
+INFO - 2024-07-25 11:53:51 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:51 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/j', 2] - os_result: True
+INFO - 2024-07-25 11:53:51 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:51 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/j', 1] - os_result: False
+INFO - 2024-07-25 11:53:51 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:51 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:51 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:51 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee', 4] - os_result: True
+INFO - 2024-07-25 11:53:51 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:51 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee', 2] - os_result: True
+INFO - 2024-07-25 11:53:51 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:51 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee', 1] - os_result: True
+INFO - 2024-07-25 11:53:51 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:51 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee', 65536] - os_result: 5
+INFO - 2024-07-25 11:53:51 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:51 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:51 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:51 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: ['.', '..']
+INFO - 2024-07-25 11:53:51 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:51 - topic : /topic/release - func : close - args : 5
+INFO - 2024-07-25 11:53:53 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:53:53 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 1] - os_result: True
+INFO - 2024-07-25 11:53:53 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:53 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:57 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:57 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:53:57 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 65536] - os_result: 4
+INFO - 2024-07-25 11:53:57 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:53:57 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: ['.', '..', 'hola', '.que.swp', '.hola.swp', '.Trash-1000', 'j', 'neee']
+INFO - 2024-07-25 11:53:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:57 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:57 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.que.swp - os_result: {'st_atime': 1721817396.3726025, 'st_ctime': 1721817229.3057568, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817229.3057568, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:57 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:57 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:57 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:57 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:53:58 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:53:58 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:53:58 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:53:58 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:01 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:01 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:01 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:01 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:01 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:01 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee', 1] - os_result: True
+INFO - 2024-07-25 11:54:03 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:54:03 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee', 65536] - os_result: 4
+INFO - 2024-07-25 11:54:03 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:03 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:03 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:54:03 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: ['.', '..']
+INFO - 2024-07-25 11:54:04 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:04 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:04 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:54:04 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:54:05 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:05 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:05 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:05 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/neee - os_result: {'st_atime': 1721895109.8135474, 'st_ctime': 1721751378.0492587, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721751378.0492587, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:05 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:05 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 1] - os_result: True
+INFO - 2024-07-25 11:54:08 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:08 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721817984.8265817, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721817984.8265817, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+ERROR - 2024-07-25 11:54:09 - Ha habido un error a la hora de ejecutar la operacion: 'lstat' con los argumentos: /home/diego/PycharmProjects/mqtt_test/directorio_servidor/prueba - Codigo de error: 2 - Mensaje de error: No such file or directory
+INFO - 2024-07-25 11:54:09 - La operacion mkdir ha tenido exito
+DEBUG - 2024-07-25 11:54:09 - topic : /topic/mkdir - func : mkdir - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/prueba', 509]
+INFO - 2024-07-25 11:54:09 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:09 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/prueba - os_result: {'st_atime': 1721901249.1450706, 'st_ctime': 1721901249.1410704, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901249.1410704, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:09 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:09 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 2] - os_result: True
+INFO - 2024-07-25 11:54:09 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:09 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721901249.1410704, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901249.1410704, 'st_nlink': 5, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:09 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:09 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:09 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:09 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/prueba', 4] - os_result: True
+INFO - 2024-07-25 11:54:09 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:09 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/prueba', 2] - os_result: True
+INFO - 2024-07-25 11:54:09 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:09 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/prueba', 1] - os_result: True
+INFO - 2024-07-25 11:54:09 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:54:09 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/prueba', 65536] - os_result: 4
+INFO - 2024-07-25 11:54:10 - La operacion readDir ha tenido exito
+DEBUG - 2024-07-25 11:54:10 - topic : /topic/readDir - func : listdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/prueba - os_result: ['.', '..']
+INFO - 2024-07-25 11:54:10 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:54:10 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:54:11 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:11 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721901249.1410704, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901249.1410704, 'st_nlink': 5, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:11 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:11 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/prueba - os_result: {'st_atime': 1721901249.1450706, 'st_ctime': 1721901249.1410704, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901249.1410704, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:11 - La operacion rmdir ha tenido exito
+DEBUG - 2024-07-25 11:54:11 - topic : /topic/rmdir - func : rmdir - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/prueba
+INFO - 2024-07-25 11:54:13 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:13 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721817985.1425867, 'st_ctime': 1721901251.7731068, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901251.7731068, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:15 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:15 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901254.0491385, 'st_ctime': 1721901251.7731068, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901251.7731068, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:25 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:25 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901254.0491385, 'st_ctime': 1721901251.7731068, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901251.7731068, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:25 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:25 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/j - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721817654.2570066, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+ERROR - 2024-07-25 11:54:26 - Ha habido un error a la hora de ejecutar la operacion: 'lstat' con los argumentos: /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - Codigo de error: 2 - Mensaje de error: No such file or directory
+ERROR - 2024-07-25 11:54:26 - Ha habido un error a la hora de ejecutar la operacion: 'lstat' con los argumentos: /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - Codigo de error: 2 - Mensaje de error: No such file or directory
+ERROR - 2024-07-25 11:54:26 - Ha habido un error a la hora de ejecutar la operacion: 'lstat' con los argumentos: /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - Codigo de error: 2 - Mensaje de error: No such file or directory
+INFO - 2024-07-25 11:54:26 - La operacion rename ha tenido exito
+DEBUG - 2024-07-25 11:54:26 - topic : /topic/rename - func : rename - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/j', '/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e']
+INFO - 2024-07-25 11:54:26 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:26 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 2] - os_result: True
+INFO - 2024-07-25 11:54:26 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:26 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901254.0491385, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901266.3493118, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:26 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:26 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:26 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:26 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:26 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:54:26 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 294912] - os_result: 4
+INFO - 2024-07-25 11:54:26 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:54:26 - topic : /topic/read - func : read - args : [4, 4096] - os_result: b'hola\n'
+INFO - 2024-07-25 11:54:27 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:54:27 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:54:27 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:54:27 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:54:27 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:27 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - os_result: {'st_atime': 1721817659.1010895, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:27 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:27 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 4] - os_result: True
+INFO - 2024-07-25 11:54:27 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:27 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 2] - os_result: True
+INFO - 2024-07-25 11:54:27 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:27 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 1] - os_result: False
+INFO - 2024-07-25 11:54:27 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:27 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901254.0491385, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901266.3493118, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:29 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:29 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901254.0491385, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901266.3493118, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:34 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:34 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901269.2173529, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901266.3493118, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:34 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:34 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - os_result: {'st_atime': 1721901269.2493532, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:34 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:54:34 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 32768] - os_result: 4
+INFO - 2024-07-25 11:54:34 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:54:34 - topic : /topic/read - func : read - args : [4, 4096] - os_result: b'hola\n'
+INFO - 2024-07-25 11:54:34 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:54:34 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:54:34 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:54:34 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:54:36 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:36 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901269.2173529, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901266.3493118, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:36 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:36 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - os_result: {'st_atime': 1721901269.2493532, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:36 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:36 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 1] - os_result: True
+INFO - 2024-07-25 11:54:36 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:36 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 2] - os_result: True
+ERROR - 2024-07-25 11:54:36 - Ha habido un error a la hora de ejecutar la operacion: 'lstat' con los argumentos: /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - Codigo de error: 2 - Mensaje de error: No such file or directory
+ERROR - 2024-07-25 11:54:36 - Ha habido un error a la hora de ejecutar la operacion: 'lstat' con los argumentos: /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - Codigo de error: 2 - Mensaje de error: No such file or directory
+ERROR - 2024-07-25 11:54:36 - Ha habido un error a la hora de ejecutar la operacion: 'lstat' con los argumentos: /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - Codigo de error: 2 - Mensaje de error: No such file or directory
+INFO - 2024-07-25 11:54:37 - La operacion create ha tenido exito
+DEBUG - 2024-07-25 11:54:37 - topic : /topic/create - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp', 65, 33204] - os_result: 4
+INFO - 2024-07-25 11:54:37 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:37 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - os_result: {'st_atime': 1721901277.0054648, 'st_ctime': 1721901277.0054648, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901277.0054648, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:37 - La operacion write ha tenido exito
+DEBUG - 2024-07-25 11:54:37 - topic : /topic/write - func : write - args : [4, b'b0nano 6.2\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xdb\xaa\x01\x00diego\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00diego-B450-AORUS-ELITE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'] - os_result: 1024
+INFO - 2024-07-25 11:54:37 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:37 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 2] - os_result: True
+INFO - 2024-07-25 11:54:37 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:54:37 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:54:37 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:37 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901269.2173529, 'st_ctime': 1721901277.0054648, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901277.0054648, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:37 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:54:37 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:54:37 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:37 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - os_result: {'st_atime': 1721901269.2493532, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:37 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:54:37 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 32768] - os_result: 4
+INFO - 2024-07-25 11:54:37 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:37 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:38 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:54:38 - topic : /topic/read - func : read - args : [4, 4096] - os_result: b'hola\n'
+INFO - 2024-07-25 11:54:38 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:38 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - os_result: {'st_atime': 1721901277.0054648, 'st_ctime': 1721901277.2054677, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901277.2054677, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:38 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:54:38 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:54:38 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:38 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - os_result: {'st_atime': 1721901277.0054648, 'st_ctime': 1721901277.2054677, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901277.2054677, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:38 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:54:38 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:54:38 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:38 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 2] - os_result: True
+INFO - 2024-07-25 11:54:38 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:54:38 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp', 294912] - os_result: 4
+INFO - 2024-07-25 11:54:38 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:38 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - os_result: {'st_atime': 1721901269.2493532, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:38 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:54:38 - topic : /topic/read - func : read - args : [4, 4096] - os_result: b'b0nano 6.2\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xdb\xaa\x01\x00diego\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00diego-B450-AORUS-ELITE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+INFO - 2024-07-25 11:54:38 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:38 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - os_result: {'st_atime': 1721901269.2493532, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:39 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:54:39 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:54:39 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:54:39 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:54:39 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:39 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp', 4] - os_result: True
+INFO - 2024-07-25 11:54:39 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:39 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp', 2] - os_result: True
+INFO - 2024-07-25 11:54:39 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:39 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - os_result: {'st_atime': 1721901277.0054648, 'st_ctime': 1721901277.2054677, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901277.2054677, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:39 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:39 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp', 1] - os_result: False
+INFO - 2024-07-25 11:54:39 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:39 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901269.2173529, 'st_ctime': 1721901277.0054648, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901277.0054648, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:41 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:41 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - os_result: {'st_atime': 1721901277.0054648, 'st_ctime': 1721901277.2054677, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901277.2054677, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:42 - La operacion unlink ha tenido exito
+DEBUG - 2024-07-25 11:54:42 - topic : /topic/unlink - func : unlink - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp
+ERROR - 2024-07-25 11:54:42 - Ha habido un error a la hora de ejecutar la operacion: 'lstat' con los argumentos: /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - Codigo de error: 2 - Mensaje de error: No such file or directory
+INFO - 2024-07-25 11:54:42 - La operacion create ha tenido exito
+DEBUG - 2024-07-25 11:54:42 - topic : /topic/create - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp', 65, 33204] - os_result: 4
+INFO - 2024-07-25 11:54:42 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:42 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - os_result: {'st_atime': 1721901282.2095404, 'st_ctime': 1721901282.2095404, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901282.2095404, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:42 - La operacion write ha tenido exito
+DEBUG - 2024-07-25 11:54:42 - topic : /topic/write - func : write - args : [4, b'b0nano 6.2\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xdb\xaa\x01\x00diego\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00diego-B450-AORUS-ELITE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00U\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'] - os_result: 1024
+INFO - 2024-07-25 11:54:42 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:42 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 2] - os_result: True
+INFO - 2024-07-25 11:54:42 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:54:42 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:54:42 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:42 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901269.2173529, 'st_ctime': 1721901282.2095404, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901282.2095404, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:42 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:54:42 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:54:42 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:42 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:43 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:43 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - os_result: {'st_atime': 1721901282.2095404, 'st_ctime': 1721901282.4095433, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901282.4095433, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:43 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:54:43 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp', 294912] - os_result: 4
+INFO - 2024-07-25 11:54:43 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:54:43 - topic : /topic/read - func : read - args : [4, 4096] - os_result: b'b0nano 6.2\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xdb\xaa\x01\x00diego\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00diego-B450-AORUS-ELITE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00U\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+INFO - 2024-07-25 11:54:43 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:54:43 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:54:43 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:54:43 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:54:43 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:43 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - os_result: {'st_atime': 1721901282.2095404, 'st_ctime': 1721901282.4095433, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901282.4095433, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:43 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:43 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp', 4] - os_result: True
+INFO - 2024-07-25 11:54:43 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:43 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp', 2] - os_result: True
+INFO - 2024-07-25 11:54:43 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:43 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp', 1] - os_result: False
+INFO - 2024-07-25 11:54:43 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:43 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901269.2173529, 'st_ctime': 1721901282.2095404, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901282.2095404, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:44 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:44 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - os_result: {'st_atime': 1721901269.2493532, 'st_ctime': 1721901266.3493118, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721817654.2570066, 'st_nlink': 1, 'st_size': 5, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:44 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:54:44 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 32769] - os_result: 4
+INFO - 2024-07-25 11:54:44 - La operacion truncate ha tenido exito
+DEBUG - 2024-07-25 11:54:44 - topic : /topic/truncate - func : truncate - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 0]
+INFO - 2024-07-25 11:54:44 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:44 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - os_result: {'st_atime': 1721901269.2493532, 'st_ctime': 1721901284.517574, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901284.517574, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:44 - La operacion write ha tenido exito
+DEBUG - 2024-07-25 11:54:44 - topic : /topic/write - func : write - args : [4, b'hola\nque tal\n'] - os_result: 13
+INFO - 2024-07-25 11:54:44 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:54:44 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:54:44 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:54:44 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:54:45 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:54:45 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:54:45 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:45 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - os_result: {'st_atime': 1721901269.2493532, 'st_ctime': 1721901284.717577, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901284.717577, 'st_nlink': 1, 'st_size': 13, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:45 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:45 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 2] - os_result: True
+INFO - 2024-07-25 11:54:45 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:45 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901284.2495701, 'st_ctime': 1721901282.2095404, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901282.2095404, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:45 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:45 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:45 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:45 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - os_result: {'st_atime': 1721901269.2493532, 'st_ctime': 1721901284.717577, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901284.717577, 'st_nlink': 1, 'st_size': 13, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:45 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:54:45 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 294912] - os_result: 4
+INFO - 2024-07-25 11:54:45 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:54:45 - topic : /topic/read - func : read - args : [4, 4096] - os_result: b'hola\nque tal\n'
+INFO - 2024-07-25 11:54:45 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:54:45 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:54:45 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:54:45 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:54:46 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:46 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 4] - os_result: True
+INFO - 2024-07-25 11:54:46 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:46 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 2] - os_result: True
+INFO - 2024-07-25 11:54:46 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:46 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp - os_result: {'st_atime': 1721901284.3775718, 'st_ctime': 1721901282.4095433, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901282.4095433, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:46 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:46 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 1] - os_result: False
+INFO - 2024-07-25 11:54:46 - La operacion unlink ha tenido exito
+DEBUG - 2024-07-25 11:54:46 - topic : /topic/unlink - func : unlink - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.e.swp
+INFO - 2024-07-25 11:54:46 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:46 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901284.2495701, 'st_ctime': 1721901286.425602, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901286.425602, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:52 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:52 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901284.2495701, 'st_ctime': 1721901286.425602, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901286.425602, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:52 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:52 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721816834.0030646, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:52 - La operacion chmod ha tenido exito
+DEBUG - 2024-07-25 11:54:52 - topic : /topic/chmod - func : chmod - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 33206]
+INFO - 2024-07-25 11:54:52 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:52 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721901292.3576894, 'st_gid': 1000, 'st_mode': 33206, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:52 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:52 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 2] - os_result: True
+INFO - 2024-07-25 11:54:52 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:52 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:52 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:52 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 4] - os_result: True
+INFO - 2024-07-25 11:54:52 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:52 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 2] - os_result: True
+INFO - 2024-07-25 11:54:53 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:53 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 1] - os_result: False
+INFO - 2024-07-25 11:54:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:57 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721901292.3576894, 'st_gid': 1000, 'st_mode': 33206, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:57 - La operacion chmod ha tenido exito
+DEBUG - 2024-07-25 11:54:57 - topic : /topic/chmod - func : chmod - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 33024]
+INFO - 2024-07-25 11:54:58 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:58 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721901297.9137719, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:58 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:58 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 2] - os_result: True
+INFO - 2024-07-25 11:54:58 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:58 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901284.2495701, 'st_ctime': 1721901286.425602, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901286.425602, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:58 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:58 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:54:58 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:58 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 4] - os_result: True
+INFO - 2024-07-25 11:54:58 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:58 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 2] - os_result: False
+INFO - 2024-07-25 11:54:58 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:54:58 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 1] - os_result: False
+INFO - 2024-07-25 11:54:59 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:54:59 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901284.2495701, 'st_ctime': 1721901286.425602, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901286.425602, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:00 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:00 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721901297.9137719, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:00 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:55:00 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 32768] - os_result: 4
+INFO - 2024-07-25 11:55:00 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:55:00 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:55:00 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:55:00 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:55:04 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:04 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721901297.9137719, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:04 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:04 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901299.4457946, 'st_ctime': 1721901286.425602, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901286.425602, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:04 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:55:04 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 1] - os_result: True
+INFO - 2024-07-25 11:55:04 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:55:04 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 2] - os_result: True
+INFO - 2024-07-25 11:55:04 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:04 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:04 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:55:04 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 32768] - os_result: 4
+INFO - 2024-07-25 11:55:04 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:55:04 - topic : /topic/read - func : read - args : [4, 4096] - os_result: b'b0nano 6.2\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00qB\x00\x00diego\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00diego-B450-AORUS-ELITE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00hola\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+INFO - 2024-07-25 11:55:05 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:55:05 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:55:05 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:55:05 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:55:07 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:07 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721816933.1727364, 'st_ctime': 1721816932.1047182, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721816932.1047182, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:07 - La operacion unlink ha tenido exito
+DEBUG - 2024-07-25 11:55:07 - topic : /topic/unlink - func : unlink - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp
+ERROR - 2024-07-25 11:55:07 - Ha habido un error a la hora de ejecutar la operacion: 'lstat' con los argumentos: /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - Codigo de error: 2 - Mensaje de error: No such file or directory
+INFO - 2024-07-25 11:55:07 - La operacion create ha tenido exito
+DEBUG - 2024-07-25 11:55:07 - topic : /topic/create - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 65, 33204] - os_result: 4
+INFO - 2024-07-25 11:55:08 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:08 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721901307.9059217, 'st_ctime': 1721901307.9059217, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901307.9059217, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:08 - La operacion write ha tenido exito
+DEBUG - 2024-07-25 11:55:08 - topic : /topic/write - func : write - args : [4, b'b0nano 6.2\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xec\xaa\x01\x00diego\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00diego-B450-AORUS-ELITE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00hola\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'] - os_result: 1024
+INFO - 2024-07-25 11:55:08 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:55:08 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 2] - os_result: True
+INFO - 2024-07-25 11:55:08 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:55:08 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:55:08 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:08 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901299.4457946, 'st_ctime': 1721901307.9059217, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901307.9059217, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:08 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:55:08 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:55:08 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:08 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721901297.9137719, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:08 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:55:08 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 32768] - os_result: 4
+INFO - 2024-07-25 11:55:08 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:08 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:08 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:55:08 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:55:09 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:09 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721901307.9059217, 'st_ctime': 1721901308.1059248, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901308.1059248, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:09 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:55:09 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:55:09 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:55:09 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 2] - os_result: False
+INFO - 2024-07-25 11:55:09 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:09 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721901307.9059217, 'st_ctime': 1721901308.1059248, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901308.1059248, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:09 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:55:09 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 294912] - os_result: 4
+INFO - 2024-07-25 11:55:09 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:55:09 - topic : /topic/read - func : read - args : [4, 4096] - os_result: b'b0nano 6.2\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xec\xaa\x01\x00diego\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00diego-B450-AORUS-ELITE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00hola\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+INFO - 2024-07-25 11:55:09 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:55:09 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:55:09 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:55:09 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:55:09 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:55:09 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 4] - os_result: True
+INFO - 2024-07-25 11:55:09 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:55:09 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 2] - os_result: True
+INFO - 2024-07-25 11:55:10 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:55:10 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 1] - os_result: False
+INFO - 2024-07-25 11:55:10 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:10 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901299.4457946, 'st_ctime': 1721901307.9059217, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901307.9059217, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:10 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:10 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721901307.9059217, 'st_ctime': 1721901308.1059248, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901308.1059248, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:10 - La operacion unlink ha tenido exito
+DEBUG - 2024-07-25 11:55:10 - topic : /topic/unlink - func : unlink - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp
+ERROR - 2024-07-25 11:55:10 - Ha habido un error a la hora de ejecutar la operacion: 'lstat' con los argumentos: /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - Codigo de error: 2 - Mensaje de error: No such file or directory
+INFO - 2024-07-25 11:55:10 - La operacion create ha tenido exito
+DEBUG - 2024-07-25 11:55:10 - topic : /topic/create - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 65, 33204] - os_result: 4
+INFO - 2024-07-25 11:55:10 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:10 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721901310.8259661, 'st_ctime': 1721901310.8259661, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901310.8259661, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:11 - La operacion write ha tenido exito
+DEBUG - 2024-07-25 11:55:11 - topic : /topic/write - func : write - args : [4, b'b0nano 6.2\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xec\xaa\x01\x00diego\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00diego-B450-AORUS-ELITE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00hola\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00U\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'] - os_result: 1024
+INFO - 2024-07-25 11:55:11 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:55:11 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/', 2] - os_result: True
+INFO - 2024-07-25 11:55:11 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:55:11 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:55:11 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:11 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901299.4457946, 'st_ctime': 1721901310.8259661, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901310.8259661, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:11 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:55:11 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:55:11 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:11 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.Trash-1000 - os_result: {'st_atime': 1721816776.2300937, 'st_ctime': 1721816769.7859855, 'st_gid': 1000, 'st_mode': 16832, 'st_mtime': 1721816769.7859855, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:11 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:11 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721901310.8259661, 'st_ctime': 1721901311.025969, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901311.025969, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:11 - La operacion open ha tenido exito
+DEBUG - 2024-07-25 11:55:11 - topic : /topic/open - func : open - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 294912] - os_result: 4
+INFO - 2024-07-25 11:55:11 - La operacion read ha tenido exito
+DEBUG - 2024-07-25 11:55:11 - topic : /topic/read - func : read - args : [4, 4096] - os_result: b'b0nano 6.2\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xec\xaa\x01\x00diego\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00diego-B450-AORUS-ELITE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00hola\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00U\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+INFO - 2024-07-25 11:55:11 - La operacion flush_fsync ha tenido exito
+DEBUG - 2024-07-25 11:55:11 - topic : /topic/flush_fsync - func : fsync - args : 4
+INFO - 2024-07-25 11:55:12 - La operacion release ha tenido exito
+DEBUG - 2024-07-25 11:55:12 - topic : /topic/release - func : close - args : 4
+INFO - 2024-07-25 11:55:12 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:12 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721901310.8259661, 'st_ctime': 1721901311.025969, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901311.025969, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:12 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:55:12 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 4] - os_result: True
+INFO - 2024-07-25 11:55:12 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:55:12 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 2] - os_result: True
+INFO - 2024-07-25 11:55:12 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:55:12 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp', 1] - os_result: False
+INFO - 2024-07-25 11:55:12 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:12 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901299.4457946, 'st_ctime': 1721901310.8259661, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901310.8259661, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:12 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:12 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721901297.9137719, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+ERROR - 2024-07-25 11:55:12 - Ha habido un error a la hora de ejecutar la operacion: 'open' con los argumentos: ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 32769] - Codigo de error: 13 - Mensaje de error: Permission denied
+INFO - 2024-07-25 11:55:14 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:14 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901299.4457946, 'st_ctime': 1721901310.8259661, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901310.8259661, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:16 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:16 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721901297.9137719, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+ERROR - 2024-07-25 11:55:16 - Ha habido un error a la hora de ejecutar la operacion: 'open' con los argumentos: ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 32769] - Codigo de error: 13 - Mensaje de error: Permission denied
+INFO - 2024-07-25 11:55:20 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:20 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721901297.9137719, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+ERROR - 2024-07-25 11:55:20 - Ha habido un error a la hora de ejecutar la operacion: 'open' con los argumentos: ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 32769] - Codigo de error: 13 - Mensaje de error: Permission denied
+INFO - 2024-07-25 11:55:23 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:23 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola - os_result: {'st_atime': 1721816812.2186983, 'st_ctime': 1721901297.9137719, 'st_gid': 1000, 'st_mode': 33024, 'st_mtime': 1721816812.2186983, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+ERROR - 2024-07-25 11:55:23 - Ha habido un error a la hora de ejecutar la operacion: 'open' con los argumentos: ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/hola', 32769] - Codigo de error: 13 - Mensaje de error: Permission denied
+INFO - 2024-07-25 11:55:24 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:24 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp - os_result: {'st_atime': 1721901310.8259661, 'st_ctime': 1721901311.025969, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901311.025969, 'st_nlink': 1, 'st_size': 1024, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:24 - La operacion unlink ha tenido exito
+DEBUG - 2024-07-25 11:55:24 - topic : /topic/unlink - func : unlink - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/.hola.swp
+INFO - 2024-07-25 11:55:28 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:28 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901314.6020234, 'st_ctime': 1721901324.7781796, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901324.7781796, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:28 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:28 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e - os_result: {'st_atime': 1721901299.4977953, 'st_ctime': 1721901284.717577, 'st_gid': 1000, 'st_mode': 33204, 'st_mtime': 1721901284.717577, 'st_nlink': 1, 'st_size': 13, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:28 - La operacion access ha tenido exito
+DEBUG - 2024-07-25 11:55:28 - topic : /topic/access - func : access - args : ['/home/diego/PycharmProjects/mqtt_test/directorio_servidor/e', 2] - os_result: True
+INFO - 2024-07-25 11:55:28 - La operacion unlink ha tenido exito
+DEBUG - 2024-07-25 11:55:28 - topic : /topic/unlink - func : unlink - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/e
+INFO - 2024-07-25 11:55:29 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:29 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901314.6020234, 'st_ctime': 1721901328.982245, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901328.982245, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-07-25 11:55:40 - La operacion getattr ha tenido exito
+DEBUG - 2024-07-25 11:55:40 - topic : /topic/getattr - func : lstat - args : /home/diego/PycharmProjects/mqtt_test/directorio_servidor/ - os_result: {'st_atime': 1721901329.7502568, 'st_ctime': 1721901328.982245, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1721901328.982245, 'st_nlink': 4, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: {'st_atime': 1723619810.433897, 'st_ctime': 1723619804.2060442, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1723619804.2060442, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:57 - La operacion readDir ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/readDir - func : listdir - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: ['.', '..', 'hola']
+INFO - 2024-08-14 09:39:57 - La operacion release ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/release - func : close - args : 4
+INFO - 2024-08-14 09:39:57 - La operacion open ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/open - func : open - args : ['/home/diego/Escritorio/directorio_servidor_prueba/', 65536] - os_result: 4
+INFO - 2024-08-14 09:39:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: {'st_atime': 1723619810.433897, 'st_ctime': 1723619804.2060442, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1723619804.2060442, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:57 - La operacion readDir ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/readDir - func : listdir - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: ['.', '..', 'hola']
+INFO - 2024-08-14 09:39:57 - La operacion release ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/release - func : close - args : 4
+INFO - 2024-08-14 09:39:57 - La operacion open ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/open - func : open - args : ['/home/diego/Escritorio/directorio_servidor_prueba/', 65536] - os_result: 4
+INFO - 2024-08-14 09:39:57 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: {'st_atime': 1723619810.433897, 'st_ctime': 1723619804.2060442, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1723619804.2060442, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:57 - La operacion readDir ha tenido exito
+DEBUG - 2024-08-14 09:39:57 - topic : /topic/readDir - func : listdir - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: ['.', '..', 'hola']
+INFO - 2024-08-14 09:39:58 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/hola - os_result: {'st_atime': 1723618534.0328698, 'st_ctime': 1723618548.5298803, 'st_gid': 1000, 'st_mode': 33056, 'st_mtime': 1723618534.0328698, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:58 - La operacion release ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/release - func : close - args : 4
+INFO - 2024-08-14 09:39:58 - La operacion open ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/open - func : open - args : ['/home/diego/Escritorio/directorio_servidor_prueba/', 65536] - os_result: 4
+INFO - 2024-08-14 09:39:58 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: {'st_atime': 1723619810.433897, 'st_ctime': 1723619804.2060442, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1723619804.2060442, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:58 - La operacion readDir ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/readDir - func : listdir - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: ['.', '..', 'hola']
+INFO - 2024-08-14 09:39:58 - La operacion release ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/release - func : close - args : 4
+INFO - 2024-08-14 09:39:58 - La operacion open ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/open - func : open - args : ['/home/diego/Escritorio/directorio_servidor_prueba/', 65536] - os_result: 4
+INFO - 2024-08-14 09:39:58 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: {'st_atime': 1723619810.433897, 'st_ctime': 1723619804.2060442, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1723619804.2060442, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:58 - La operacion readDir ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/readDir - func : listdir - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: ['.', '..', 'hola']
+INFO - 2024-08-14 09:39:58 - La operacion release ha tenido exito
+DEBUG - 2024-08-14 09:39:58 - topic : /topic/release - func : close - args : 4
+INFO - 2024-08-14 09:39:59 - La operacion open ha tenido exito
+DEBUG - 2024-08-14 09:39:59 - topic : /topic/open - func : open - args : ['/home/diego/Escritorio/directorio_servidor_prueba/', 65536] - os_result: 4
+INFO - 2024-08-14 09:39:59 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:59 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: {'st_atime': 1723619810.433897, 'st_ctime': 1723619804.2060442, 'st_gid': 1000, 'st_mode': 16893, 'st_mtime': 1723619804.2060442, 'st_nlink': 2, 'st_size': 4096, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:59 - La operacion readDir ha tenido exito
+DEBUG - 2024-08-14 09:39:59 - topic : /topic/readDir - func : listdir - args : /home/diego/Escritorio/directorio_servidor_prueba/ - os_result: ['.', '..', 'hola']
+INFO - 2024-08-14 09:39:59 - La operacion getattr ha tenido exito
+DEBUG - 2024-08-14 09:39:59 - topic : /topic/getattr - func : lstat - args : /home/diego/Escritorio/directorio_servidor_prueba/hola - os_result: {'st_atime': 1723618534.0328698, 'st_ctime': 1723618548.5298803, 'st_gid': 1000, 'st_mode': 33056, 'st_mtime': 1723618534.0328698, 'st_nlink': 1, 'st_size': 0, 'st_uid': 1000}
+INFO - 2024-08-14 09:39:59 - La operacion release ha tenido exito
+DEBUG - 2024-08-14 09:39:59 - topic : /topic/release - func : close - args : 4
+INFO - 2024-08-14 09:39:59 - La operacion open ha tenido exito
+DEBUG - 2024-08-14 09:39:59 - topic : /topic/open - func : open - args : ['/home/diego/Escritorio/directorio_servidor_prueba/', 65536] - os_result: 4
